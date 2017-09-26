@@ -1,0 +1,313 @@
+﻿@{
+    ViewBag.Title = "Email Helper Page";
+}
+
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-2 column">
+        </div>
+        <div class="col-md-4 column"></div>
+        <div class="col-md-6">
+            <svg viewBox="0 0 750 130">
+                <symbol id="s-text">
+                    <text text-anchor="middle" x="50%" y="50%">Keep every kid sheltered~</text>
+                </symbol>
+                <g class="g-ants">
+                    <use xlink:href="#s-text" class="text-copy"></use>
+                    <use xlink:href="#s-text" class="text-copy"></use>
+                    <use xlink:href="#s-text" class="text-copy"></use>
+                    <use xlink:href="#s-text" class="text-copy"></use>
+                    <use xlink:href="#s-text" class="text-copy"></use>
+                </g>
+            </svg>
+        </div>
+    </div>
+    <div class="row clearfix">
+        <div class="col-md-2">
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="row">
+                <hr class="hr-danger" />
+                <ol class="breadcrumb bread-danger">
+                    <li class="btn btn-danger"><i class="fa fa-flag"></i>@Html.ActionLink("Identify Vulnerable Kids", "IdentifyVulnerableKids", "Home", new { @style = "color: white" })</li>
+                </ol>
+            </div>
+            <div class="row">
+                <hr class="hr-primary" />
+                <ol class="breadcrumb bread-primary">
+                    <li class="btn btn-primary" style="color: white"><i class="fa fa-bar-chart"></i>@Html.ActionLink("EducationalOutcomes", "EducationalOutcomes", "Home", new { @style = "color: white" })</li>
+                </ol>
+            </div>
+            <div class="row">
+                <hr class="hr-success" />
+                <ol class="breadcrumb bread-success">
+                    <li class="btn btn-success"><i class="fa fa-paw"></i>@Html.ActionLink("Support Services", "SupportServices", "Home", new { @style = "color: white" })</li>
+                </ol>
+            </div>
+            <div class="row">
+                <hr class="hr-info" />
+                <ol class="breadcrumb bread-purple">
+                    <li class="btn btn-info"><i class="fa fa-envelope"></i>@Html.ActionLink("Email Helper", "EmailHelper", "Home", new { @style = "color: white" })</li>
+                </ol>
+            </div>
+            <div class="row">
+                <hr class="hr-warning" />
+                <ol class="breadcrumb bread-warning">
+                    <a id="modal-2" href="#modal-container-2" data-toggle="modal" class="btn btn-warning"> <i class="fa fa-comments"></i> Teachers' Chat Hub</a>
+                    <div class="modal fade" id="modal-container-2" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                                    <h2 class="modal-title" id="myModalLabel">
+                                        Code of Conduct
+                                    </h2>
+                                </div>
+                                <div class="modal-body">
+                                    <ul>
+                                        <li>
+                                            This channel is made for communication among teachers only.
+                                        </li>
+                                        <li>
+                                            Leaking personal details of children is forbidden.
+                                        </li>
+                                        <li>
+                                            We recommend you to use pseudonym in this channel.
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> <button type="button" class="btn btn-primary">@Html.ActionLink("Yes", "ChatHub", "Home", new { @style = "color: white" })</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ol>
+            </div>
+            <div class="row">
+                <hr class="hr-doc" />
+                <ol class="breadcrumb bread-doc">
+                    <li class="btn btn-doc"><i class="fa fa-file-pdf-o"></i>@Html.ActionLink("Doc Helper", "EmailHelper", "Home", new { @style = "color: white" })</li>
+                </ol>
+            </div>
+        </div>
+        <div class="col-md-10 column">
+            <br>
+            <div class=container>
+                <div class="row clearfix">
+                    <br>
+                    <div class="row">
+                        <div class="col-xs-6 col-sm-offset-1 col-sm-4">
+                            <div class="panel panel-info">
+                                <div class="panel-heading">Email Builder</div>
+                                <div class="panel-body" style="height: 350px; word-break: break-all; overflow-y: scroll;">
+                                    <p>
+                                        Receiver Email: <input id="receiverEmail" oninput="Email.changeReceiverEmail()" style="float:right"></input>
+                                        <br>
+                                        <br>
+                                        Your Name: <input id="name" oninput="Email.changeName()" style="float:right"></input>
+                                        <br>
+                                        <br>
+                                        School Name: <input id="school" oninput="Email.changeSchool()" style="float:right"></input>
+                                        <br>
+                                        <br>
+                                        Parents Name: <input id="receiver" oninput="Email.changeReceiver()" style="float:right"></input>
+                                        <br>
+                                        <br>
+                                        Child Name: <input id="childname" oninput="Email.changeChildName()" style="float:right"></input>
+                                        <br>
+                                        <br>
+                                        Event Location: <input id="eventLocation" oninput="Email.changeEventLocation()" style="float:right"></input>
+                                        <br>
+                                        <br>
+                                        <br>
+                                        Event:
+                                        <label for="event1" style="float:right">Outdoor Activity  </label>
+                                        <input type="radio" id="event1" name="Event" value="Outdoor Activity" onclick="Email.changeEvent()" style="float:right" />
+                                        <label for="event2" style="float:right">Indoor Activity</label>
+                                        <input type="radio" id="event2" name="Event" value="Indoor Activity" onclick="Email.changeEvent()" style="float:right" />
+                                        <br>
+                                        <br>
+                                        Event Date: <input type="date" id="eventdate" oninput="Email.changeEventDate()" style="float:right"></input>
+                                        <br>
+                                        <br>
+                                        <br>
+                                        Proposal to:
+                                        <input type="radio" id="invite1" name="Invite" value="Father" onclick="Email.changeInvite()" />
+                                        <label for="invite1">Father</label>
+                                        <input type="radio" id="invite2" name="Invite" value="Mother" onclick="Email.changeInvite()" />
+                                        <label for="invite2">Mother</label>
+                                        <input type="radio" id="invite3" name="Invite" value="Both" onclick="Email.changeInvite()" />
+                                        <label for="invite3">Both</label>
+                                        <input type="radio" id="invite4" name="Invite" value="None" onclick="Email.changeInvite()" />
+                                        <label for="invite4">None</label>
+                                    </p>
+                                </div>
+                            </div>
+                            <button class="btn btn-info" onclick="Email.sendEmail()">Send the Email~</button>
+                            @Html.ActionLink("Cannot Send?", "EmailHelp", "Home", new { area = "" }, new { @style = "color: red; " })
+                        </div>
+                        <div class="col-xs-6 col-sm-offset-0 col-sm-4">
+                            <div class="panel panel-info">
+                                <div class="panel-heading">Email Preview</div>
+                                <div class="panel-body" style="height: 410px; word-break: break-all; overflow-y: scroll;" name="message2">
+                                    <p id="emailDone">Generating...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script>
+                function Email(receiverEmail, name, reveiver, childname, school, event, eventdate) {
+                    // Changeable
+                    this.receiverEmail = receiverEmail;
+                    this.name = name;
+                    this.receiver = reveiver;
+                    this.childname = childname;
+                    this.school = school;
+                    this.event = event;
+                    this.eventdate = eventdate;
+                    this.invite = "";
+                    this.eventLocation = "";
+
+                    this.changeReceiverEmail = () => {
+                        this.receiverEmail = document.getElementById("receiverEmail").value;
+                        this.generate();
+                    }
+
+                    this.changeName = () => {
+                        this.name = document.getElementById("name").value;
+                        this.generate();
+                    }
+
+                    this.changeSchool = () => {
+                        this.school = document.getElementById("school").value;
+                        this.generate();
+                    }
+
+                    this.changeChildName = () => {
+                        this.childname = document.getElementById("childname").value;
+                        this.generate();
+                    }
+
+                    this.changeReceiver = () => {
+                        this.receiver = document.getElementById("receiver").value;
+                        this.generate();
+                    }
+
+                    this.changeReceiver = () => {
+                        this.receiver = document.getElementById("receiver").value;
+                        this.generate();
+                    }
+
+                    this.changeEventDate = () => {
+                        this.eventdate = document.getElementById("eventdate").value;
+                        console.log(document.getElementById("eventdate").value)
+                        this.generate();
+                    }
+
+                    this.changeEventLocation = () => {
+                        this.eventLocation = document.getElementById("eventLocation").value;
+                        this.generate();
+                    }
+
+                    this.changeEvent = () => {
+                        var events = document.getElementsByName("Event");
+                        var selectedevent = "None";
+
+                        for (var i = 0; i < events.length; i++) {
+                            if (events[i].checked)
+                                selectedevent = events[i].value;
+                        }
+                        console.log(selectedevent);
+
+                        switch (selectedevent) {
+                            case "Outdoor Activity":
+                                this.event = " an outdoor activity";
+                                break;
+                            case "Indoor Activity":
+                                this.event = " a indoor activity";
+                                break;
+                            default:
+                                this.event = " ";
+                        }
+                        this.generate();
+                    }
+
+                    this.changeInvite = () => {
+                        var inviteValue = document.getElementsByName("Invite");
+                        var selected;
+
+                        for (var i = 0; i < inviteValue.length; i++) {
+                            if (inviteValue[i].checked)
+                                selected = inviteValue[i].value;
+                        }
+                        console.log(selected);
+
+                        switch (selected) {
+                            case "Father":
+                                this.invite = "I really hope that " + this.childname + "'s father can take " + this.childname + " to that activity. Both you and your child will have greate fun from that.";
+                                break;
+                            case "Mother":
+                                this.invite = "I really hope that " + this.childname + "'s mother can take " + this.childname + " to that activity. Both you and your child will have greate fun from that.";
+                                break;
+                            case "Both":
+                                this.invite = "I really hope that " + this.childname + "'s parents can take " + this.childname + " to that activity. Both you and your child will have greate fun from that.";
+                                break;
+                            case "None":
+                                this.invite = " ";
+                                break;
+                            default:
+                                this.invite = " ";
+                        }
+                        this.generate();
+                    }
+
+                    // Not Changeable
+                    this.last = "Best Regards";
+
+                    this.generate = () => {
+                        var space = "<br />" + "<br />"; //"%0D%0A" + "%0D%0A";
+                        var space2 = "%0D%0A" + "%0D%0A";
+                        this.application = "<b> Subject: Email from school for your kid, " + this.childname + "</b>";
+                        this.application2 = "Email from school for your kid, " + this.childname;
+
+                        var line1 = "Dear " + this.receiver + ",";
+                        var line2 = "I am a teacher of your child " +
+                            this.childname +
+                            " in " +
+                            this.school +
+                            "." + " By my understanding of your child's current situation, your child have not had a parent-child avtivity for a long time. " +
+                            "I notice that there will be " +
+                            this.event +
+                            " on " +
+                            this.eventdate + " in " + this.eventLocation + ".";
+                        var line3 = this.invite;
+                        var line5 = this.last;
+                        var line6 = this.name;
+
+                        this.content = this.application + space + line1 + space + line2 + space + line3 + space + line5 + space + line6;
+                        this.content2 = line1 + space2 + line2 + space2 + line3 + space2 + line5 + space2 + line6;
+
+                        this.update(this.content);
+                    }
+
+                    this.update = (e) => {
+                        document.getElementById("emailDone").innerHTML = e;
+                    }
+
+                    this.sendEmail = () => {
+                        var link = "mailto:" + this.receiverEmail + "?subject=" + this.application2 + "&body=" + this.content2;
+                        window.open(link);
+                    }
+                }
+                var Email = new Email("cnyangdengau@gmail.com", "Dr Who", "Mr.Harry", "Json", "Marven Primary School", "", "2017-09-03");
+                Email.generate();
+            </script>
+
+        </div>
+    </div>
+</div>

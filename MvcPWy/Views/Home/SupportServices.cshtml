@@ -1,0 +1,107 @@
+﻿@{
+    ViewBag.Title = "Support Services";
+}
+
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-2 column">
+        </div>
+        <div class="col-md-4 column"></div>
+        <div class="col-md-6">
+            <svg viewBox="0 0 750 130">
+                <symbol id="s-text">
+                    <text text-anchor="middle" x="50%" y="50%">Keep every kid sheltered~</text>
+                </symbol>
+                <g class="g-ants">
+                    <use xlink:href="#s-text" class="text-copy"></use>
+                    <use xlink:href="#s-text" class="text-copy"></use>
+                    <use xlink:href="#s-text" class="text-copy"></use>
+                    <use xlink:href="#s-text" class="text-copy"></use>
+                    <use xlink:href="#s-text" class="text-copy"></use>
+                </g>
+            </svg>
+        </div>
+    </div>
+    <div class="row clearfix">
+        <div class="col-md-2">
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="row">
+                <hr class="hr-danger" />
+                <ol class="breadcrumb bread-danger">
+                    <li class="btn btn-danger"><i class="fa fa-flag"></i>@Html.ActionLink("Identify Vulnerable Kids", "IdentifyVulnerableKids", "Home", new { @style = "color: white" })</li>
+                </ol>
+            </div>
+            <div class="row">
+                <hr class="hr-primary" />
+                <ol class="breadcrumb bread-primary">
+                    <li class="btn btn-primary" style="color: white"><i class="fa fa-bar-chart"></i>@Html.ActionLink("EducationalOutcomes", "EducationalOutcomes", "Home", new { @style = "color: white" })</li>
+                </ol>
+            </div>
+            <div class="row">
+                <hr class="hr-success" />
+                <ol class="breadcrumb bread-success">
+                    <li class="btn btn-success"><i class="fa fa-paw"></i>@Html.ActionLink("Support Services", "SupportServices", "Home", new { @style = "color: white" })</li>
+                </ol>
+            </div>
+            <div class="row">
+                <hr class="hr-info" />
+                <ol class="breadcrumb bread-purple">
+                    <li class="btn btn-info"><i class="fa fa-envelope"></i>@Html.ActionLink("Email Helper", "EmailHelper", "Home", new { @style = "color: white" })</li>
+                </ol>
+            </div>
+            <div class="row">
+                <hr class="hr-warning" />
+                <ol class="breadcrumb bread-warning">
+                    <a id="modal-2" href="#modal-container-2" data-toggle="modal" class="btn btn-warning"> <i class="fa fa-comments"></i> Teachers' Chat Hub</a>
+                    <div class="modal fade" id="modal-container-2" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                                    <h2 class="modal-title" id="myModalLabel">
+                                        Code of Conduct
+                                    </h2>
+                                </div>
+                                <div class="modal-body">
+                                    <ul>
+                                        <li>
+                                            This channel is made for communication among teachers only.
+                                        </li>
+                                        <li>
+                                            Leaking personal details of children is forbidden.
+                                        </li>
+                                        <li>
+                                            We recommend you to use pseudonym in this channel.
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> <button type="button" class="btn btn-primary">@Html.ActionLink("Yes", "ChatHub", "Home", new { @style = "color: white" })</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ol>
+            </div>
+            <div class="row">
+                <hr class="hr-doc" />
+                <ol class="breadcrumb bread-doc">
+                    <li class="btn btn-doc"><i class="fa fa-file-pdf-o"></i>@Html.ActionLink("Doc Helper", "EmailHelper", "Home", new { @style = "color: white" })</li>
+                </ol>
+            </div>
+        </div>
+        <div class="col-md-10 column">
+            <br>
+            <div class="container">
+                <div>
+                    <iframe width="950px" title="Helping Out" height="808px" src="https://data.melbourne.vic.gov.au/w/jduy-94rf/spy9-nmud?cur=hJTNhnw0BY7&from=root" frameborder="0" scrolling="no">
+                        <a href="https://data.melbourne.vic.gov.au/People-Events/Helping-Out/jduy-94rf" title="Helping Out" target="_blank">Helping Out</a>
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
