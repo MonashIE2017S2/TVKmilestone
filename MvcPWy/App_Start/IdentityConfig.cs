@@ -31,7 +31,7 @@ namespace MvcPWy
             var myMessage = new SendGridMessage();
             myMessage.AddTo(message.Destination);
             myMessage.From = new MailAddress(
-                "Joe@contoso.com", "Joe S.");
+                "cnyangdengau@gmail.com", "TVK Dev Team");
             myMessage.Subject = message.Subject;
             myMessage.Text = message.Body;
             myMessage.Html = message.Body;

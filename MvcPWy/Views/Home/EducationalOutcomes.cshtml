@@ -10,7 +10,7 @@
     }
 </style>
 <div class="container">
-    <div class="col-md-2">
+    <div class="col-md-2" style="position: relative; top: 0px;">
         <br>
         <br>
         <br>
@@ -24,7 +24,7 @@
         <div class="row">
             <hr class="hr-primary" />
             <ol class="breadcrumb bread-primary">
-                <li class="btn btn-primary" style="color: white"><i class="fa fa-bar-chart"></i>@Html.ActionLink("EducationalOutcomes", "EducationalOutcomes", "Home", new { @style = "color: white" })</li>
+                <li class="btn btn-primary" style="color: white"><i class="fa fa-bar-chart"></i>@Html.ActionLink("Vulnerable Kids Facts", "EducationalOutcomes", "Home", new { @style = "color: white" })</li>
             </ol>
         </div>
         <div class="row">
@@ -43,8 +43,9 @@
             <hr class="hr-warning" />
             <ol class="breadcrumb bread-warning">
                 <li class="btn btn-warning"><i class="fa fa-comments"></i>@Html.ActionLink("Experience Sharing", "ChatHub", "Home", new { @style = "color: white" })</li>
-                @*<a id="modal-2" href="#modal-container-2" data-toggle="modal" class="btn btn-warning"> <i class="fa fa-comments"></i> Teachers' Chat Hub</a>
-                    <div class="modal fade" id="modal-container-2" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                @* <li data-target="#myModal"  data-toggle="modal" class="btn btn-warning"> <i class="fa fa-comments"></i> Teachers' Chat Hub</li>
+                    <!-- Modal -->
+                    <div class="modal fade" id="myModal" role="dialog">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
@@ -81,6 +82,78 @@
             </ol>
         </div>
     </div>
+
+    @*<div class="col-md-2">
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="row">
+                <hr class="hr-danger" />
+                <ol class="breadcrumb bread-danger">
+                    <li class="btn btn-danger"><i class="fa fa-flag"></i>@Html.ActionLink("Identify Vulnerable Kids", "IdentifyVulnerableKids", "Home", new { @style = "color: white" })</li>
+                </ol>
+            </div>
+            <div class="row">
+                <hr class="hr-primary" />
+                <ol class="breadcrumb bread-primary">
+                    <li class="btn btn-primary" style="color: white"><i class="fa fa-bar-chart"></i>@Html.ActionLink("EducationalOutcomes", "EducationalOutcomes", "Home", new { @style = "color: white" })</li>
+                </ol>
+            </div>
+            <div class="row">
+                <hr class="hr-success" />
+                <ol class="breadcrumb bread-success">
+                    <li class="btn btn-success"><i class="fa fa-paw"></i>@Html.ActionLink("Support Services", "SupportServices", "Home", new { @style = "color: white" })</li>
+                </ol>
+            </div>
+            <div class="row">
+                <hr class="hr-info" />
+                <ol class="breadcrumb bread-purple">
+                    <li class="btn btn-info"><i class="fa fa-envelope"></i>@Html.ActionLink("Email Helper", "EmailHelper", "Home", new { @style = "color: white" })</li>
+                </ol>
+            </div>
+            <div class="row">
+                <hr class="hr-warning" />
+                <ol class="breadcrumb bread-warning">
+                    <li class="btn btn-warning"><i class="fa fa-comments"></i>@Html.ActionLink("Experience Sharing", "ChatHub", "Home", new { @style = "color: white" })</li>
+                    $1$<a id="modal-2" href="#modal-container-2" data-toggle="modal" class="btn btn-warning"> <i class="fa fa-comments"></i> Teachers' Chat Hub</a>
+                        <div class="modal fade" id="modal-container-2" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                                        <h2 class="modal-title" id="myModalLabel">
+                                            Code of Conduct
+                                        </h2>
+                                    </div>
+                                    <div class="modal-body">
+                                        <ul>
+                                            <li>
+                                                This channel is made for communication among teachers only.
+                                            </li>
+                                            <li>
+                                                Leaking personal details of children is forbidden.
+                                            </li>
+                                            <li>
+                                                We recommend you to use pseudonym in this channel.
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> <button type="button" class="btn btn-primary">@Html.ActionLink("Yes", "ChatHub", "Home", new { @style = "color: white" })</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>#1#
+                </ol>
+            </div>
+            <div class="row">
+                <hr class="hr-doc" />
+                <ol class="breadcrumb bread-doc">
+                    <li class="btn btn-doc"><i class="fa fa-file-pdf-o"></i>@Html.ActionLink("Doc Helper", "EmailHelper", "Home", new { @style = "color: white" })</li>
+                </ol>
+            </div>
+        </div>*@
     <div class="col-md-10">
         <br>
         <br>
@@ -116,7 +189,7 @@
                                                             <h4 class="modal-title" id="myModalLabel1">Why are the vulnerable kids become homelessness? </h4>
                                                         </div>
                                                         <div class="modal-body">
-                                                            <canvas id="myChart" width="1000" height="700"></canvas>
+                                                            <canvas id="myChart" width="1000" height="500"></canvas>
                                                             <script>
                                                                 var ctx = document.getElementById("myChart").getContext('2d');
                                                                 Chart.defaults.global.defaultFontFamily = "Lato";
@@ -197,14 +270,15 @@
                                                             <h4 class="modal-title" id="myModalLabel2">Homelessness and Children</h4>
                                                         </div>
                                                         <div class="modal-body">
-                                                            <canvas id="polarAreaChart" width="1000" height="700"></canvas>
+                                                            <canvas id="polarAreaChart" width="1000" height="500"></canvas>
                                                             <script>
                                                                 var ctx = document.getElementById("polarAreaChart").getContext('2d');
                                                                 Chart.defaults.global.defaultFontFamily = "Lato";
                                                                 Chart.defaults.global.defaultFontSize = 12;
                                                                 var birdsData = {
                                                                     labels: [
-                                                                        "Children age 12-18", "Children under 12", "Children sleeping rough", "Children age 12-18 in VIC", "Children under 12 in VIC"
+                                                                        "Children age 12-18", "Children under 12", "Children sleeping rough",
+                                                                        "Children age 12-18 in VIC", "Children under 12 in VIC"
                                                                     ],
                                                                     datasets: [
                                                                         {
@@ -319,7 +393,7 @@
                                                             <h4 class="modal-title" id="myModalLabel3">Where do the children stay?</h4>
                                                         </div>
                                                         <div class="modal-body">
-                                                            <canvas id="donutChart" width="1000" height="700"></canvas>
+                                                            <canvas id="donutChart" width="1000" height="500"></canvas>
                                                             <script>
                                                                 var oilCanvas = document.getElementById("donutChart");
 
@@ -427,7 +501,7 @@
                                                             <h4 class="modal-title" id="myModalLabel2">Health Situation Comparison</h4>
                                                         </div>
                                                         <div class="modal-body">
-                                                            <canvas id="radarChart" width="1000" height="700"></canvas>
+                                                            <canvas id="radarChart" width="1000" height="500"></canvas>
                                                             <script>
                                                                 var ctx = document.getElementById("radarChart").getContext('2d');
                                                                 Chart.defaults.global.defaultFontFamily = "Lato";
@@ -487,7 +561,7 @@
                                                             <h4 class="modal-title" id="myModalLabel2">Education Situation Comparison</h4>
                                                         </div>
                                                         <div class="modal-body">
-                                                            <canvas id="radarChart2" width="1000" height="700"></canvas>
+                                                            <canvas id="radarChart2" width="1000" height="500"></canvas>
                                                             <script>
                                                                 var ctx = document.getElementById("radarChart2").getContext('2d');
                                                                 Chart.defaults.global.defaultFontFamily = "Lato";
@@ -535,4 +609,3 @@
         </div>
     </div>
 </div>
-

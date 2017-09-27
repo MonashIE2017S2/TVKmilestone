@@ -51,13 +51,13 @@
             background-image: -webkit-linear-gradient(left, rgba(170, 21, 238, 0.8), rgba(170,21,238,.6), rgba(0,0,0,0));
         }
 
-        .btn-primary {
-            padding: 10px 10px;
+        .btn-danger {
+            padding: 10px 5px;
             text-align: left;
         }
 
-        .btn-danger {
-            padding: 10px 6px;
+        .btn-primary {
+            padding: 10px 12px;
             text-align: left;
         }
 
@@ -67,12 +67,12 @@
         }
 
         .btn-info {
-            padding: 10px 40px;
+            padding: 10px 41px;
             text-align: left;
         }
 
         .btn-warning {
-            padding: 10px 18px;
+            padding: 10px 20px;
             text-align: left;
         }
 
@@ -91,8 +91,8 @@
 
         .btn-doc {
             color: #fff;
-            background-color: rgba(120,21,238,0.6);
-            border-color: rgba(170,21,238,0.6);
+            background-color: rgba(120,21,238,1);
+            border-color: rgba(170,21,238,1);
             padding: 10px 47px;
             text-align: left;
         }
@@ -104,8 +104,8 @@
             .btn-doc.active,
             .open > .dropdown-toggle.btn-primary {
                 color: #fff;
-                background-color: rgba(120,21,238,0.6);
-                border-color: rgba(120,21,238,0.6);
+                background-color: rgba(120,21,238,1);
+                border-color: rgba(120,21,238,1);
             }
 
             .btn-doc:active,
@@ -132,12 +132,12 @@
             .btn-doc.disabled.active,
             .btn-doc[disabled].active,
             fieldset[disabled] .btn-doc.active {
-                background-color: rgba(120,21,238,0.6);
-                border-color: rgba(120,21,238,0.6);
+                background-color: rgba(120,21,238,1);
+                border-color: rgba(120,21,238,1);
             }
 
             .btn-doc .badge {
-                color: rgba(120,21,238,0.6);
+                color: rgba(120,21,238,1);
                 background-color: #fff;
             }
     </style>
@@ -166,7 +166,10 @@
             @RenderSection("featured", required: false)
             <section class="content-wrapper main-content clear-fix">
                 @RenderBody()
-                <hr />
+                <br>
+                <br>
+                <br>
+                <hr>
                 <footer style="text-align: right;">
                         <p style="font-weight: bold">&copy; @DateTime.Now.Year -Team-Y-Nots</p>
                 </footer>

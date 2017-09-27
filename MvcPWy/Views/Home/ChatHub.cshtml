@@ -168,62 +168,43 @@
         }
     </script>
 </head>
-
 <div class="container">
-    <div class="row clearfix">
-        <div class="col-md-2 column">
+    <div class="col-md-2" style="position: relative; top: 0px;">
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="row">
+            <hr class="hr-danger" />
+            <ol class="breadcrumb bread-danger">
+                <li class="btn btn-danger"><i class="fa fa-flag"></i>@Html.ActionLink("Identify Vulnerable Kids", "IdentifyVulnerableKids", "Home", new { @style = "color: white" })</li>
+            </ol>
         </div>
-        <div class="col-md-4 column"></div>
-        <div class="col-md-6">
-            <svg viewBox="0 0 750 130">
-                <symbol id="s-text">
-                    <text text-anchor="middle" x="50%" y="50%">Keep every kid sheltered~</text>
-                </symbol>
-                <g class="g-ants">
-                    <use xlink:href="#s-text" class="text-copy"></use>
-                    <use xlink:href="#s-text" class="text-copy"></use>
-                    <use xlink:href="#s-text" class="text-copy"></use>
-                    <use xlink:href="#s-text" class="text-copy"></use>
-                    <use xlink:href="#s-text" class="text-copy"></use>
-                </g>
-            </svg>
+        <div class="row">
+            <hr class="hr-primary" />
+            <ol class="breadcrumb bread-primary">
+                <li class="btn btn-primary" style="color: white"><i class="fa fa-bar-chart"></i>@Html.ActionLink("Vulnerable Kids Facts", "EducationalOutcomes", "Home", new { @style = "color: white" })</li>
+            </ol>
         </div>
-    </div>
-    <div class="row clearfix">
-        <div class="col-md-2">
-            <br>
-            <br>
-            <br>
-            <br>
-            <div class="row">
-                <hr class="hr-danger" />
-                <ol class="breadcrumb bread-danger">
-                    <li class="btn btn-danger"><i class="fa fa-flag"></i>@Html.ActionLink("Identify Vulnerable Kids", "IdentifyVulnerableKids", "Home", new { @style = "color: white" })</li>
-                </ol>
-            </div>
-            <div class="row">
-                <hr class="hr-primary" />
-                <ol class="breadcrumb bread-primary">
-                    <li class="btn btn-primary" style="color: white"><i class="fa fa-bar-chart"></i>@Html.ActionLink("EducationalOutcomes", "EducationalOutcomes", "Home", new { @style = "color: white" })</li>
-                </ol>
-            </div>
-            <div class="row">
-                <hr class="hr-success" />
-                <ol class="breadcrumb bread-success">
-                    <li class="btn btn-success"><i class="fa fa-paw"></i>@Html.ActionLink("Support Services", "SupportServices", "Home", new { @style = "color: white" })</li>
-                </ol>
-            </div>
-            <div class="row">
-                <hr class="hr-info" />
-                <ol class="breadcrumb bread-purple">
-                    <li class="btn btn-info"><i class="fa fa-envelope"></i>@Html.ActionLink("Email Helper", "EmailHelper", "Home", new { @style = "color: white" })</li>
-                </ol>
-            </div>
-            <div class="row">
-                <hr class="hr-warning" />
-                <ol class="breadcrumb bread-warning">
-                    <a id="modal-2" href="#modal-container-2" data-toggle="modal" class="btn btn-warning"> <i class="fa fa-comments"></i> Teachers' Chat Hub</a>
-                    <div class="modal fade" id="modal-container-2" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="row">
+            <hr class="hr-success" />
+            <ol class="breadcrumb bread-success">
+                <li class="btn btn-success"><i class="fa fa-paw"></i>@Html.ActionLink("Support Services", "SupportServices", "Home", new { @style = "color: white" })</li>
+            </ol>
+        </div>
+        <div class="row">
+            <hr class="hr-info" />
+            <ol class="breadcrumb bread-purple">
+                <li class="btn btn-info"><i class="fa fa-envelope"></i>@Html.ActionLink("Email Helper", "EmailHelper", "Home", new { @style = "color: white" })</li>
+            </ol>
+        </div>
+        <div class="row">
+            <hr class="hr-warning" />
+            <ol class="breadcrumb bread-warning">
+                <li class="btn btn-warning"><i class="fa fa-comments"></i>@Html.ActionLink("Experience Sharing", "ChatHub", "Home", new { @style = "color: white" })</li>
+                @* <li data-target="#myModal"  data-toggle="modal" class="btn btn-warning"> <i class="fa fa-comments"></i> Teachers' Chat Hub</li>
+                    <!-- Modal -->
+                    <div class="modal fade" id="myModal" role="dialog">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
@@ -250,55 +231,196 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </ol>
-            </div>
-            <div class="row">
-                <hr class="hr-doc" />
-                <ol class="breadcrumb bread-doc">
-                    <li class="btn btn-doc"><i class="fa fa-file-pdf-o"></i>@Html.ActionLink("Doc Helper", "EmailHelper", "Home", new { @style = "color: white" })</li>
-                </ol>
-            </div>
+                    </div>*@
+            </ol>
         </div>
-        <div class="col-md-10 column">
-            <br>
-            <div class="container">
-                <div class="row clearfix">
-                    <br>
-                    <div class="row">
-                        <div class="col-xs-6 col-sm-offset-1 col-sm-5">
-                            <div class="panel panel-warning">
-                                <div class="panel-heading">Chat Room</div>
-                                <div class="panel-body" style="height: 350px; word-break: break-all; overflow-y: scroll;">
-                                    <ul id="chatRoom"></ul>
-                                </div>
-                            </div>
-                            <div class="popup">
-                                Send To:
-                                <label id="lblTalkToWho">Public Channel</label>
-                                <label id="lblTalkToWhoId" hidden>all</label>
-                                <input id="txtMsg" type="text" />
-                                <span class="popuptext" id="myPopup">Don't enter address info!</span>
-                                <span class="popuptext" id="myPopup2">Don't enter any dirty words!</span>
-                                <input type="button" id="btnSend" value="Send" class="btn btn-warning" />
+        <div class="row">
+            <hr class="hr-doc" />
+            <ol class="breadcrumb bread-doc">
+                <li class="btn btn-doc"><i class="fa fa-file-pdf-o"></i>@Html.ActionLink("Doc Helper", "EmailHelper", "Home", new { @style = "color: white" })</li>
+            </ol>
+        </div>
+    </div>
+    <div class="col-md-10">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="container">
+            <div class="row clearfix">
+                <br>
+                <div class="row">
+                    <div class="col-xs-6 col-sm-offset-1 col-sm-5">
+                        <div class="panel panel-warning" style="background: rgba(255, 250, 250, 0.9); border: None;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                            <div class="panel-heading">Chat Room</div>
+                            <div class="panel-body" style="height: 350px; word-break: break-all; overflow-y: scroll;">
+                                <ul id="chatRoom"></ul>
                             </div>
                         </div>
-                        <div class="col-xs-6 col-sm-offset-0 col-sm-3">
-                            <div class="panel panel-warning">
-                                <div class="panel-heading">Contact List</div>
-                                <div class="panel-body" style="height: 410px; word-break: break-all; overflow-y: scroll;">
-                                    <ul class="list-group" id="contact-list">
-                                        <li class="list-group-item">
-                                            <ul id="lstUser"></ul>
-                                        </li>
-                                    </ul>
-                                </div>
+                        <div class="popup">
+                            Send To:
+                            <label id="lblTalkToWho">Public Channel</label>
+                            <label id="lblTalkToWhoId" hidden>all</label>
+                            <input id="txtMsg" type="text" />
+                            <span class="popuptext" id="myPopup">Don't send address info!</span>
+                            <span class="popuptext" id="myPopup2">Don't send inappropriate words!</span>
+                            <input type="button" id="btnSend" value="Send" class="btn btn-warning" />
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-sm-offset-0 col-sm-3">
+                        <div class="panel panel-warning" style="background: rgba(255, 250, 250, 0.9); border: None;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                            <div class="panel-heading">Contact List</div>
+                            <div class="panel-body" style="height: 410px; word-break: break-all; overflow-y: scroll;">
+                                <ul class="list-group" id="contact-list">
+                                    <li class="list-group-item">
+                                        <ul id="lstUser"></ul>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>
-                    <br />
                 </div>
+                <br />
             </div>
         </div>
     </div>
 </div>
+
+@*
+
+    <div class="container">
+        <div class="row clearfix">
+            <div class="col-md-2 column">
+            </div>
+            <div class="col-md-4 column"></div>
+            <div class="col-md-6">
+                <svg viewBox="0 0 750 130">
+                    <symbol id="s-text">
+                        <text text-anchor="middle" x="50%" y="50%">Keep every kid sheltered~</text>
+                    </symbol>
+                    <g class="g-ants">
+                        <use xlink:href="#s-text" class="text-copy"></use>
+                        <use xlink:href="#s-text" class="text-copy"></use>
+                        <use xlink:href="#s-text" class="text-copy"></use>
+                        <use xlink:href="#s-text" class="text-copy"></use>
+                        <use xlink:href="#s-text" class="text-copy"></use>
+                    </g>
+                </svg>
+            </div>
+        </div>
+        <div class="row clearfix">
+            <div class="col-md-2">
+                <br>
+                <br>
+                <br>
+                <br>
+                <div class="row">
+                    <hr class="hr-danger" />
+                    <ol class="breadcrumb bread-danger">
+                        <li class="btn btn-danger"><i class="fa fa-flag"></i>@Html.ActionLink("Identify Vulnerable Kids", "IdentifyVulnerableKids", "Home", new { @style = "color: white" })</li>
+                    </ol>
+                </div>
+                <div class="row">
+                    <hr class="hr-primary" />
+                    <ol class="breadcrumb bread-primary">
+                        <li class="btn btn-primary" style="color: white"><i class="fa fa-bar-chart"></i>@Html.ActionLink("EducationalOutcomes", "EducationalOutcomes", "Home", new { @style = "color: white" })</li>
+                    </ol>
+                </div>
+                <div class="row">
+                    <hr class="hr-success" />
+                    <ol class="breadcrumb bread-success">
+                        <li class="btn btn-success"><i class="fa fa-paw"></i>@Html.ActionLink("Support Services", "SupportServices", "Home", new { @style = "color: white" })</li>
+                    </ol>
+                </div>
+                <div class="row">
+                    <hr class="hr-info" />
+                    <ol class="breadcrumb bread-purple">
+                        <li class="btn btn-info"><i class="fa fa-envelope"></i>@Html.ActionLink("Email Helper", "EmailHelper", "Home", new { @style = "color: white" })</li>
+                    </ol>
+                </div>
+                <div class="row">
+                    <hr class="hr-warning" />
+                    <ol class="breadcrumb bread-warning">
+                        <a id="modal-2" href="#modal-container-2" data-toggle="modal" class="btn btn-warning"> <i class="fa fa-comments"></i> Teachers' Chat Hub</a>
+                        <div class="modal fade" id="modal-container-2" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                                        <h2 class="modal-title" id="myModalLabel">
+                                            Code of Conduct
+                                        </h2>
+                                    </div>
+                                    <div class="modal-body">
+                                        <ul>
+                                            <li>
+                                                This channel is made for communication among teachers only.
+                                            </li>
+                                            <li>
+                                                Leaking personal details of children is forbidden.
+                                            </li>
+                                            <li>
+                                                We recommend you to use pseudonym in this channel.
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> <button type="button" class="btn btn-primary">@Html.ActionLink("Yes", "ChatHub", "Home", new { @style = "color: white" })</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </ol>
+                </div>
+                <div class="row">
+                    <hr class="hr-doc" />
+                    <ol class="breadcrumb bread-doc">
+                        <li class="btn btn-doc"><i class="fa fa-file-pdf-o"></i>@Html.ActionLink("Doc Helper", "EmailHelper", "Home", new { @style = "color: white" })</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="col-md-10 column">
+                <br>
+                <div class="container">
+                    <div class="row clearfix">
+                        <br>
+                        <div class="row">
+                            <div class="col-xs-6 col-sm-offset-1 col-sm-5">
+                                <div class="panel panel-warning">
+                                    <div class="panel-heading">Chat Room</div>
+                                    <div class="panel-body" style="height: 350px; word-break: break-all; overflow-y: scroll;">
+                                        <ul id="chatRoom"></ul>
+                                    </div>
+                                </div>
+                                <div class="popup">
+                                    Send To:
+                                    <label id="lblTalkToWho">Public Channel</label>
+                                    <label id="lblTalkToWhoId" hidden>all</label>
+                                    <input id="txtMsg" type="text" />
+                                    <span class="popuptext" id="myPopup">Don't enter address info!</span>
+                                    <span class="popuptext" id="myPopup2">Don't enter any dirty words!</span>
+                                    <input type="button" id="btnSend" value="Send" class="btn btn-warning" />
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-offset-0 col-sm-3">
+                                <div class="panel panel-warning">
+                                    <div class="panel-heading">Contact List</div>
+                                    <div class="panel-body" style="height: 410px; word-break: break-all; overflow-y: scroll;">
+                                        <ul class="list-group" id="contact-list">
+                                            <li class="list-group-item">
+                                                <ul id="lstUser"></ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+*@
