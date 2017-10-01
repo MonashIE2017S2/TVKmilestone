@@ -138,36 +138,36 @@ database.ref().on("value", function (snap) {
                 break;
             //question5
             case "Male":
-                erApi += "5";
+                erApi += "23";
                 break;
             case "Female":
-                erApi += "5";
+                erApi += "23";
                 break;
             //question7
             case "North-Eastern Victoria":
-                erApi += "7";
+                erApi += "22";
                 break;
             case "North-Western Victoria":
-                erApi += "7";
+                erApi += "22";
                 break;
             case "South-Eastern Victoria":
-                erApi += "7";
+                erApi += "22";
                 break;
             case "South-Western Victoria":
-                erApi += "7";
+                erApi += "22";
                 break;
             //question8
             case "Government":
-                erApi += "8";
+                erApi += "21";
                 break;
             case "Non-Government":
-                erApi += "8";
+                erApi += "21";
                 break;
             case "Catholic":
-                erApi += "8";
+                erApi += "21";
                 break;
             case "Indepentent":
-                erApi += "8";
+                erApi += "21";
                 break;
             //question9
             case "Yes":
@@ -193,7 +193,7 @@ database.ref().on("value", function (snap) {
                 erApi += "19";
                 break;
         default:
-            erApi += "6";
+            erApi += "24";
         }
 
         $.getJSON(erApi, {
