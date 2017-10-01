@@ -185,8 +185,19 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\ChildFirstController.cs" />
     <Compile Include="Controllers\EduOutcomesController.cs" />
     <Compile Include="Controllers\IdentifyQuestionsController.cs" />
+    <Compile Include="Controllers\RegionController.cs" />
+    <Compile Include="Controllers\SfysController.cs" />
+    <Compile Include="Controllers\SuburbController.cs" />
+    <Compile Include="Controllers\SupportController.cs" />
+    <Compile Include="HelpClass\ChildFirstHelper.cs" />
+    <Compile Include="HelpClass\IdentifyQuestionHelper.cs" />
+    <Compile Include="HelpClass\RegionHelper.cs" />
+    <Compile Include="HelpClass\SfysHelper.cs" />
+    <Compile Include="HelpClass\SuburbHelper.cs" />
+    <Compile Include="HelpClass\SupportHelper.cs" />
     <Compile Include="Hubs\ChatHub.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -194,6 +205,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710010745358_initial-migration.cs" />
+    <Compile Include="Migrations\201710010745358_initial-migration.Designer.cs">
+      <DependentUpon>201710010745358_initial-migration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\ChildFirst.cs" />
     <Compile Include="Models\EduOutcome.cs">
       <DependentUpon>ModelEduOutcome.tt</DependentUpon>
     </Compile>
@@ -201,42 +219,46 @@
       <DependentUpon>IdentifyQuestionsModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\IdentifyQuestionsModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>IdentifyQuestionsModel.Context.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="Models\IdentifyQuestionsModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>IdentifyQuestionsModel.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="Models\IdentifyQuestionsModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>IdentifyQuestionsModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ModelEduOutcome.Context.cs">
-      <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\ModelEduOutcome.Context.cs">
       <DependentUpon>ModelEduOutcome.Context.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="Models\ModelEduOutcome.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>ModelEduOutcome.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="Models\ModelEduOutcome.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>ModelEduOutcome.edmx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
+    <Compile Include="Models\Region.cs" />
+    <Compile Include="Models\Sfys.cs" />
+    <Compile Include="Models\Suburb.cs" />
+    <Compile Include="Models\Support.cs" />
     <Compile Include="Models\User\UserLogin.cs" />
     <Compile Include="Models\User\UserPersonal.cs" />
     <Compile Include="Models\User\UserRole.cs" />
     <Compile Include="Models\User\UserSecret.cs" />
-    <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="MyDBContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -244,6 +266,10 @@
     <Content Include="App_Data\aspnet-MvcPWy-20140807072429.mdf" />
     <Content Include="App_Data\aspnet-MvcPWy-20140807072429_log.ldf">
       <DependentUpon>aspnet-MvcPWy-20140807072429.mdf</DependentUpon>
+    </Content>
+    <Content Include="App_Data\EduOutcomesContext-20170928161344.mdf" />
+    <Content Include="App_Data\EduOutcomesContext-20170928161344_log.ldf">
+      <DependentUpon>EduOutcomesContext-20170928161344.mdf</DependentUpon>
     </Content>
     <Content Include="Content\about.css" />
     <Content Include="Content\Animation.css" />
@@ -255,6 +281,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Image.css" />
     <Content Include="Content\IndexModal.css" />
+    <Content Include="Content\now-ui-kit.css" />
     <Content Include="Content\popup.css" />
     <Content Include="Content\Slides.css" />
     <Content Include="Content\Text.css" />
@@ -279,6 +306,7 @@
     <Content Include="Image\logo.png" />
     <Content Include="Image\Melbourne.jpg" />
     <Content Include="Image\neutral.png" />
+    <Content Include="Image\roshan.jpg" />
     <Content Include="Image\roshan.PNG" />
     <Content Include="Image\sad.png" />
     <Content Include="Image\second-home.jpg" />
@@ -289,23 +317,29 @@
     <Content Include="Image\youth4.jpg" />
     <Content Include="Image\youthhead.jpg" />
     <Content Include="Models\IdentifyQuestionsModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>IdentifyQuestionsModel.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>IdentifyQuestionsModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\IdentifyQuestionsModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
+    <Content Include="Models\IdentifyQuestionsModel.edmx.diagram">
       <DependentUpon>IdentifyQuestionsModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\IdentifyQuestionsModel.tt">
+      <DependentUpon>IdentifyQuestionsModel.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>IdentifyQuestionsModel.cs</LastGenOutput>
     </Content>
     <Content Include="Models\ModelEduOutcome.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ModelEduOutcome.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>ModelEduOutcome.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\ModelEduOutcome.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
+    <Content Include="Models\ModelEduOutcome.edmx.diagram">
       <DependentUpon>ModelEduOutcome.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\ModelEduOutcome.tt">
+      <DependentUpon>ModelEduOutcome.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>ModelEduOutcome.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\AnimationLogo.js" />
@@ -316,20 +350,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <EntityDeploy Include="Models\IdentifyQuestionsModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>IdentifyQuestionsModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\IdentifyQuestionsModel.edmx.diagram">
-      <DependentUpon>IdentifyQuestionsModel.edmx</DependentUpon>
-    </Content>
-    <EntityDeploy Include="Models\ModelEduOutcome.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ModelEduOutcome.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\ModelEduOutcome.edmx.diagram">
-      <DependentUpon>ModelEduOutcome.edmx</DependentUpon>
-    </Content>
+    <Content Include="Content\IEP-Primary.docx" />
+    <Content Include="Content\IEP-Secondary.docx" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile1.pubxml" />
@@ -342,6 +364,7 @@
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <None Include="Scripts\jquery-1.10.2-vsdoc.js" />
     <Content Include="Scripts\Chart.js" />
+    <Content Include="Scripts\dirPagination.js" />
     <Content Include="Scripts\IndexModal.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -353,12 +376,16 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\Modals.js" />
     <Content Include="Scripts\ModalSwitch.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\now-ui-kit.js" />
+    <Content Include="Scripts\popper.min.js" />
     <Content Include="Scripts\quiz.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\Slides.js" />
+    <Content Include="Scripts\support.js" />
     <Content Include="Scripts\survey.jquery.js" />
     <Content Include="Scripts\Weather.js" />
     <Content Include="Scripts\Welcome.js" />
@@ -412,6 +439,7 @@
     <Content Include="Views\Home\EmailHelper.cshtml" />
     <Content Include="Views\Home\ChatHub.cshtml" />
     <Content Include="Views\Home\EmailHelp.cshtml" />
+    <Content Include="Views\Home\EducationPlan.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
@@ -419,6 +447,21 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Models\IdentifyQuestionsModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>IdentifyQuestionsModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <EntityDeploy Include="Models\ModelEduOutcome.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelEduOutcome.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201710010745358_initial-migration.resx">
+      <DependentUpon>201710010745358_initial-migration.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

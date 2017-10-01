@@ -54,6 +54,13 @@ namespace MvcPWy.Controllers
             return View();
         }
 
+        public ActionResult EducationPlan()
+        {
+            ViewBag.Message = "Education Plan Page.";
+
+            return View();
+        }
+
         [Authorize]
         public ActionResult EmailHelper()
         {

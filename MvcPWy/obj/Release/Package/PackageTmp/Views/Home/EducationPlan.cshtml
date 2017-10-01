@@ -1,0 +1,235 @@
+﻿@{
+    ViewBag.Title = "Individual Education Plan";
+}
+<style>
+
+    .abc {
+        display: table;
+        height: 80%;
+    }
+
+    .abc > p {
+        height: 80%;
+    }
+
+    .find {
+        padding: 2%;
+        display: table-cell;
+        text-align: center;
+        vertical-align: bottom;
+    }
+
+    .emergency {
+        min-height: 100px;
+        padding-top: 50px;
+        display: table-cell;
+    }
+    .clearfix{
+        height:100%;
+    }
+    #content{
+        height:100%;
+    }
+    .panel-body{
+        text-align: left;
+        color: black;
+    }
+    .panel-title{
+        color: maroon;
+    }
+</style>
+
+<div class="container">
+    <div class="col-md-2" style="position: relative; top: 5px;">
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="row">
+            <hr class="hr-danger" />
+            <ol class="breadcrumb bread-danger">
+                <li class="btn btn-danger"><i class="fa fa-flag"></i>@Html.ActionLink("Identify Vulnerable Kids", "IdentifyVulnerableKids", "Home", new { @style = "color: white" })</li>
+            </ol>
+        </div>
+        <div class="row">
+            <hr class="hr-primary" />
+            <ol class="breadcrumb bread-primary">
+                <li class="btn btn-primary" style="color: white"><i class="fa fa-bar-chart"></i>@Html.ActionLink("Vulnerable Kids Facts", "EducationalOutcomes", "Home", new { @style = "color: white" })</li>
+            </ol>
+        </div>
+        <div class="row">
+            <hr class="hr-success" />
+            <ol class="breadcrumb bread-success">
+                <li class="btn btn-success"><i class="fa fa-paw"></i>@Html.ActionLink("Support Services", "SupportServices", "Home", new { @style = "color: white" })</li>
+            </ol>
+        </div>
+        <div class="row">
+            <hr class="hr-info" />
+            <ol class="breadcrumb bread-purple">
+                <li class="btn btn-info"><i class="fa fa-envelope"></i>@Html.ActionLink("Email Helper", "EmailHelper", "Home", new { @style = "color: white" })</li>
+            </ol>
+        </div>
+        <div class="row">
+            <hr class="hr-warning" />
+            <ol class="breadcrumb bread-warning">
+                <li class="btn btn-warning"><i class="fa fa-comments"></i>@Html.ActionLink("Experience Sharing", "ChatHub", "Home", new { @style = "color: white" })</li>
+                @* <li data-target="#myModal"  data-toggle="modal" class="btn btn-warning"> <i class="fa fa-comments"></i> Teachers' Chat Hub</li>
+                    <!-- Modal -->
+                    <div class="modal fade" id="myModal" role="dialog">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                                    <h2 class="modal-title" id="myModalLabel">
+                                        Code of Conduct
+                                    </h2>
+                                </div>
+                                <div class="modal-body">
+                                    <ul>
+                                        <li>
+                                            This channel is made for communication among teachers only.
+                                        </li>
+                                        <li>
+                                            Leaking personal details of children is forbidden.
+                                        </li>
+                                        <li>
+                                            We recommend you to use pseudonym in this channel.
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> <button type="button" class="btn btn-primary">@Html.ActionLink("Yes", "ChatHub", "Home", new { @style = "color: white" })</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>*@
+            </ol>
+        </div>
+        <div class="row">
+            <hr class="hr-doc" />
+            <ol class="breadcrumb bread-doc">
+                <li class="btn btn-doc"><i class="fa fa-file-pdf-o"></i>@Html.ActionLink("Education Plan", "EducationPlan", "Home", new { @style = "color: white" })</li>
+            </ol>
+        </div>
+    </div>
+    <div class="col-md-1"></div>
+    <div class="col-md-9">
+        <br />
+        <div class="row" id="content">
+            <div class="col-md-12">
+                <div class="blockquote blockquote-primary">
+                    <b>Individual Education Plan</b>
+                    The purpose of an IEP is to describe a set of strategies to address the particular educational needs of the child <br />
+                    <div class="panel-group" id="accordion">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+                                        What is an Individual Education Plan?
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapse1" class="panel-collapse collapse in">
+                                <div class="panel-body">
+                                    <div class="row">
+                                        All Schools in Victoria must develop an Individual Education Plan (IEP) for every student in Out-of-Home Care.
+                                        This plan should be developed by the Student Support Group.
+                                        A Documented Plan:
+                                        • is student centred and focused on students’ educational, physical, behavioural,
+                                        social and/or emotional strengths as well as needs;
+                                        • addresses relevant learning outcomes, targets, teaching and learning adjustments;
+                                        • is developed by teachers in collaboration with student/s, parents/carers and other
+                                        relevant staff or service providers;
+                                        • records the agreed response of the school to identified educational needs for an
+                                        individual student or a small group of students;
+                                        • needs to be realistic, practical and readily understood by all those involved;
+                                        • is a working document for the teacher/s and other staff (eg support staff, education
+                                        assistants, visiting or specialist teachers) who work with the student/s;
+                                        • identifies the implementation and monitoring responsibilities of those working with
+                                        the student/s;
+                                        • records regular assessment and evaluation of student progress and achievement
+                                        of identified outcomes and targets during a specified period of time; and
+                                        • is provided to parents/carers and other service providers as required.
+                                    </div>
+                                    <div class="row" style="text-align:center">
+
+                                        <iframe width="560" height="315" src="https://www.youtube.com/embed/tGYO9XWhI2Y" frameborder="0" allowfullscreen></iframe>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+                                        Creating a Plan
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapse2" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    The first step is to gather specific data regarding the student's progress or academic problems. This may be done through:
+                                    . a conference with parents
+                                    . a conference with the student
+                                    . observations of the student
+                                    . analysis of the student's performance (attention, behavior, work completion, tests, classwork, homework, etc.)
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+                                        What it should contain?
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapse3" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <div class="row">
+                                        The IEP should:
+                                        . outline a meaningful educational program
+                                        . be age appropriate, holistic in its approach, flexible and future orientated
+                                        . consider key long-term goals that reflect learning outcomes in social, academic and life skills development
+                                        . establish short-term goals that will lead sequentially to the achievement of long-term goals
+                                        . ensure that the goals are measurable, achievable, supported, time-framed and aim to retain the student at school
+                                        . clearly articulate individual and shared responsibilities
+                                        . provide guidance for the Student Support Group
+                                        . contain a record of important decisions, actions, student behaviour and progress
+                                        . be a useful transition tool
+                                        . be reviewed every six months at minimum, or as regularly as needed.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">
+                                        Templates for Individual Education Plan
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapse4" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            For Primary School students
+                                            <a href="~/Content/IEP-Primary.docx" download>Template for Primary School students</a>
+                                        </div>
+                                        <div class="col-md-6">
+                                            For Secondary Schoold students
+                                            <a href="~/Content/IEP-Secondary.docx" download>Template for Secondary School students</a>
+                                        </div>
+                                        Source : Department of Education, Victoria
+                                        <a href="http://www.education.vic.gov.au">http://www.education.vic.gov.au</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

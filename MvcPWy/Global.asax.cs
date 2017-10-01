@@ -4,9 +4,11 @@ using System.Web.Optimization;
 using System.Web.Routing;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Data.Entity;
 using System.Web.Http;
+using MvcPWy.Migrations;
 
 namespace MvcPWy
 {
@@ -14,6 +16,8 @@ namespace MvcPWy
     {
         protected void Application_Start()
         {
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<MyDBContext, Migrations.Configuration>());
+            MyDBContext db = new MyDBContext();
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);

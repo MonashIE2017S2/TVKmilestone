@@ -7,6 +7,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System.ComponentModel.DataAnnotations;
+
 namespace MvcPWy.Models
 {
     using System;
@@ -14,6 +16,7 @@ namespace MvcPWy.Models
     
     public partial class IdentifyQuestion
     {
+        [Key]
         public int QuestionID { get; set; }
         public string evidence { get; set; }
         public string reference { get; set; }
