@@ -29,31 +29,30 @@ database.ref().on("value", function (snap) {
     for (x in obj) {
         keys.push(x);
     }
-
     window.survey = new Survey.Model({
         questions: [
             {
-                type: "radiogroup", name: "StudyEngagement1", title: "What is the attendance status of this kid?", isRequired: true,
+                type: "radiogroup", name: "StudyEngagement1", title: "What is the school attendance like for this child?", isRequired: true,
                 colCount: 6, choices: ["Excellent(95%)", "Good(85%)", "Fair(75%)", "Not Good(60% or below)"]
             },
             {
-                type: "radiogroup", name: "StudyEngagement2", title: "What is the grade status of this kid?", isRequired: true,
+                type: "radiogroup", name: "StudyEngagement2", title: "What is the overall grade or academic status for this child?", isRequired: true,
                 colCount: 6, choices: ["Excellent(TOP 15%)", "Good(TOP 30%)", "Fair(TOP 60%)", "Not Good(Below 60%)"]
             },
             {
-                type: "radiogroup", name: "Personality1", title: "Does the kid have a record of significant bad behavior?", isRequired: true,
+                type: "radiogroup", name: "Personality1", title: "Does this child have a record of significant bad behavior?(eg.violence)", isRequired: true,
                 colCount: 6, choices: ["Many records", "Just one", "Never"]
             },
             {
-                type: "dropdown", name: "Personality2", title: "How many friends do the child have?", isRequired: true, colCount: 0,
+                type: "dropdown", name: "Personality2", title: "How many friends does this child have?", isRequired: true, colCount: 0,
                 choices: ["Few Friend", "One or Two Friends", "Many Friends"]
             },
             {
-                type: "radiogroup", name: "SocialFactor1", title: "What is the gender of this kid?", isRequired: true,
+                type: "radiogroup", name: "SocialFactor1", title: "What is the gender of this child?", isRequired: true,
                 colCount: 6, choices: ["Male","Female"]
             },
             {
-                type: "dropdown", name: "SocialFactor2", title: "Please select the suburb where the kid live in.", isRequired: true, colCount: 0,
+                type: "dropdown", name: "SocialFactor2", title: "Please select the suburb where the child live in.", isRequired: true, colCount: 0,
                 choices: keys
             },
             {
@@ -65,11 +64,11 @@ database.ref().on("value", function (snap) {
                 colCount: 6, choices: ["Government", "Non-Government","Catholic","Indepentent"]
             },
             {
-                type: "radiogroup", name: "FamilyFactor1", title: "Have you ever found any sign of domestic violence in the body of this kid?", isRequired: true, colCount: 6,
+                type: "radiogroup", name: "FamilyFactor1", title: "Have you ever found any sign of domestic violence in the body of this child?", isRequired: true, colCount: 6,
                 choices: ["Yes", "No"]
             },
             {
-                type: "radiogroup", name: "FamilyFactor2", title: "What is the family status of this kid?", isRequired: true, colCount: 6,
+                type: "radiogroup", name: "FamilyFactor2", title: "What is the family status of this child?", isRequired: true, colCount: 6,
                 choices: ["Single-Parent(With Mother)", "Single-Parent(With Father)", "Blend Family(Step mother or step father)","Two-parent Family", "Foster Family"]
             }
         ]
@@ -93,49 +92,49 @@ database.ref().on("value", function (snap) {
         switch (options.value) {
             //question1
             case "Excellent(95%)":
-                erApi += "1";
+                erApi += "4";
                 break;
             case "Good(85%)":
-                erApi += "1";
+                erApi += "3";
                 break;
             case "Fair(75%)":
-                erApi += "1";
+                erApi += "2";
                 break;
             case "Not Good(60% or below)":
                 erApi += "1";
                 break;
             //question2
             case "Excellent(TOP 15%)":
-                erApi += "2";
+                erApi += "8";
                 break;
             case "Good(TOP 30%)":
-                erApi += "2";
+                erApi += "7";
                 break;
             case "Fair(TOP 60%)":
-                erApi += "2";
+                erApi += "6";
                 break;
             case "Not Good(Below 60%)":
-                erApi += "2";
+                erApi += "5";
                 break;
             //question3
             case "Many records":
-                erApi += "3";
+                erApi += "9";
                 break;
             case "Just one":
-                erApi += "3";
+                erApi += "10";
                 break;
             case "Never":
-                erApi += "3";
+                erApi += "11";
                 break;
             //question4
             case "Few Friend":
-                erApi += "4";
+                erApi += "12";
                 break;
             case "One or Two Friends":
-                erApi += "4";
+                erApi += "13";
                 break;
             case "Many Friends":
-                erApi += "4";
+                erApi += "13";
                 break;
             //question5
             case "Male":
@@ -172,26 +171,26 @@ database.ref().on("value", function (snap) {
                 break;
             //question9
             case "Yes":
-                erApi += "9";
+                erApi += "14";
                 break;
             case "No":
-                erApi += "9";
+                erApi += "15";
                 break;
             //question 10
             case "Single-Parent(With Mother)":
-                erApi += "10";
+                erApi += "16";
                 break;
             case "Single-Parent(With Father)":
-                erApi += "10";
+                erApi += "17";
                 break;
             case "Blend Family(Step mother or step father)":
-                erApi += "10";
+                erApi += "18";
                 break;
             case "Two-parent Family":
-                erApi += "10";
+                erApi += "20";
                 break;
             case "Foster Family":
-                erApi += "10";
+                erApi += "19";
                 break;
         default:
             erApi += "6";
@@ -230,22 +229,248 @@ database.ref().on("value", function (snap) {
         var ctx = document.getElementById("radarChartResult2").getContext('2d');
         Chart.defaults.global.defaultFontFamily = "Lato";
         Chart.defaults.global.defaultFontSize = 12;
+
+        var chartValue = [10, 10, 10, 10, 10];
+        var studyEngagementValue;
+        var personalityValue;
+        var socialFactorValue;
+        var schoolFactorValue;
+        var familyFactorValue;
+
+        //StudyEngagement
+        var studyEngagement1 = result.data['StudyEngagement1'];
+        switch (studyEngagement1) {
+            case "Excellent(95%)":
+                studyEngagementValue = 90;
+                break;
+            case "Good(85%)":
+                studyEngagementValue = 80;
+                break;
+            case "Fair(75%)":
+                studyEngagementValue = 70;
+                break;
+            case "Not Good(60% or below)":
+                studyEngagementValue = 60;
+                break;
+            default:
+                studyEngagementValue = 0;
+        }
+
+        var studyEngagement2 = result.data['StudyEngagement2'];
+        switch (studyEngagement2) {
+        case "Excellent(TOP 15%)":
+            studyEngagementValue += 10;
+            break;
+        case "Good(TOP 30%)":
+            studyEngagementValue += 5;
+            break;
+        case "Fair(TOP 60%)":
+            studyEngagementValue -= 10;
+            break;
+        case "Not Good(Below 60%)":
+            studyEngagementValue -= 20;
+            break;
+        default:
+            studyEngagementValue = 0;
+        }
+        chartValue[0] = studyEngagementValue;
+
+        //Personality ["Many records", "Just one", "Never"]["Few Friend", "One or Two Friends", "Many Friends"]
+        var personality1 = result.data['Personality1'];
+        switch (personality1) {
+        case "Many records":
+            personalityValue = 40;
+            break;
+        case "Just one":
+            personalityValue = 60;
+            break;
+        case "Never":
+            personalityValue = 80;
+            break;
+        default:
+            personalityValue = 0;
+        }
+
+        var personality2 = result.data["Personality2"];
+        switch (personality2) {
+        case "Few Friend":
+            personalityValue -= 15;
+            break;
+        case "One or Two Friends":
+            personalityValue -= 5;
+            break;
+        case "Many Friends":
+            personalityValue += 10;
+            break;
+        default:
+            personalityValue = 0;
+        }
+        chartValue[1] = personalityValue;
+
+        //SocialFactor
+        var ratioList = [];
+        var maxRatio = 0;
+        var minRatio = 200;
+        snap.forEach(function (item) {
+            var itemVal = item.val();
+            var ratio = itemVal.TotalCount / itemVal.nillIncomeCount;
+            ratioList.push(ratio);
+            if (ratio > maxRatio) {
+                maxRatio = ratio;
+            }
+            var ratio2 = itemVal.TotalCount / itemVal.nillIncomeCount;
+            if (ratio2 < minRatio) {
+                minRatio = ratio2;
+            }
+        });
+        console.log(ratioList.sort(function (a, b) { return a - b }));
+        console.log(maxRatio);
+        console.log(minRatio);
+
+        var socialFactor2 = result.data["SocialFactor2"];
+        var nillIncomePercent = obj[socialFactor2]["TotalCount"] / obj[socialFactor2]["nillIncomeCount"];
+        console.log(nillIncomePercent);
+
+        if ( nillIncomePercent < 5.0){
+            socialFactorValue = 25;
+        } else if (nillIncomePercent < 8.0) {
+            socialFactorValue = 50;
+        } else if (nillIncomePercent < 9.0) {
+            socialFactorValue = 62.5;
+        } else if (nillIncomePercent < 9.6) {
+            socialFactorValue = 65;
+        } else if (nillIncomePercent < 10.0) {
+            socialFactorValue = 67.5;
+        } else if (nillIncomePercent < 10.4) {
+            socialFactorValue = 70;
+        } else if (nillIncomePercent < 11.5) {
+            socialFactorValue = 72.5;
+        } else if (nillIncomePercent < 12.5) {
+            socialFactorValue = 75;
+        } else if (nillIncomePercent < 13.5) {
+            socialFactorValue = 77.5;
+        } else if (nillIncomePercent < 14.5) {
+            socialFactorValue = 80;
+        } else if (nillIncomePercent < 16.0) {
+            socialFactorValue = 85;
+        } else if (nillIncomePercent < 17.0) {
+            socialFactorValue = 90;
+        } else {
+            socialFactorValue = 95;
+        }
+        console.log(socialFactorValue);
+
+        var socialFactor1 = result.data["SocialFactor1"];
+        switch (socialFactor1) {
+        case "Male":
+            socialFactorValue -= 5 ;
+            break;
+        case "Female":
+            socialFactorValue -= 0;
+            break;
+        default:
+            socialFactorValue = 0;
+        }
+        
+        chartValue[4] = socialFactorValue;
+
+        //SchoolFactor ["North-Eastern Victoria", "North-Western Victoria","South-Eastern Victoria","South-Western Victoria"]
+        //["Government", "Non-Government","Catholic","Indepentent"]
+        var schoolFactor1 = result.data["SchoolFactor1"];
+        var schoolFactor2 = result.data["SchoolFactor2"];
+        console.log(schoolFactor1);
+        console.log(schoolFactor2);
+        switch (schoolFactor1) {
+            case "North-Eastern Victoria":
+                schoolFactorValue = 70;
+                break;
+            case "North-Western Victoria":
+                schoolFactorValue = 80;
+                break;
+            case "South-Eastern Victoria":
+                schoolFactorValue = 65;
+                break;
+            case "South-Western Victoria":
+                schoolFactorValue = 60;
+                break;
+            default:
+                schoolFactorValue = 0;
+        }
+
+        switch (schoolFactor2) {
+            case "Government":
+                schoolFactorValue += 0;
+                break;
+            case "Non-Government":
+                schoolFactorValue -= 5;
+                break;
+            case "Catholic":
+                schoolFactorValue -= 10;
+                break;
+            case "Indepentent":
+                schoolFactorValue += 5;
+                break;
+            default:
+                schoolFactorValue += 0;
+        }
+        console.log(schoolFactorValue);
+        chartValue[2] = schoolFactorValue;
+
+        //FamilyFactor ["Single-Parent(With Mother)", "Single-Parent(With Father)", "Blend Family(Step mother or step father)","Two-parent Family", "Foster Family"]
+
+        var familyFactor1 = result.data["FamilyFactor1"];
+        var familyFactor2 = result.data["FamilyFactor2"];
+       
+        switch (familyFactor2) {
+            case "Single-Parent(With Mother)":
+                familyFactorValue = 85;
+                break;
+            case "Single-Parent(With Father)":
+                familyFactorValue = 80;
+                break;
+            case "Blend Family(Step mother or step father)":
+                familyFactorValue = 75;
+                break;
+            case "Two-parent Family":
+                familyFactorValue = 90;
+                break;
+            case "Foster Family":
+                familyFactorValue = 70;
+                break;
+        default:
+            familyFactorValue = 0;
+        }
+
+        switch (familyFactor1) {
+        case "Yes":
+            familyFactorValue -= 35;
+            break;
+        case "No":
+            familyFactorValue -= 0;
+            break;
+        default:
+            familyFactorValue += 0;
+        }
+        console.log(familyFactorValue);
+        chartValue[3] = familyFactorValue;
+
         var marksData = {
             labels: [
-                "Study Engagement","Personality","School-related factor","Family-related factor","Socio-cultural"
+                "Study Engagement", "Personality", "School-related factor", "Family-related factor", "Socio-cultural"
             ],
             datasets: [
                 {
-                    label: "The Kid you identified",
+                    label: "The child you identified",
                     backgroundColor: "rgba(220,0,0,0.4)",
-                    data: [55, 70, 75, 75, 70]
-                }
+                    data: chartValue
+    }
             ]
         };
         var optionsRadar = {
             scale: {
                 ticks: {
-                    beginAtZero: true
+                    beginAtZero: true,
+                    max:100
                 },
                 pointLabels: {
                     fontSize: 16
@@ -258,6 +483,47 @@ database.ref().on("value", function (snap) {
                 data: marksData,
                 options: optionsRadar
             });
+
+        var generalReport = "";
+
+/*        var studyEngagementValue;
+        var personalityValue;
+        var socialFactorValue;
+        var schoolFactorValue;
+        var familyFactorValue;*/
+
+        //Weakness Identification
+        if (studyEngagementValue < 60) {
+            generalReport +=
+                "<br>The academic status of this child should be taken into consideration, the teacher should explore the root causes of this situation.";
+        }
+
+        if ((personalityValue < 60)) {
+            generalReport += "<br>There is a record of bad behaviour about this child, and he/she probably facing human communication disorders. They both related to the family situation of this child. ";
+        }
+
+        if (socialFactorValue < 60) {
+            generalReport +=
+                "<br>Base on some statistics data, boys have more possiblity drop out from school than girls and the suburb where the child live in is a place with high proportion of nill-income people.";
+        }
+
+        if ((familyFactorValue < 60)) {
+            generalReport += "<br>Living and growing in a warm family is very important for children, even in a two-parents family, domestic violence can leave this child to a homelessness.";
+        }
+
+        if ((schoolFactorValue < 60)) {
+            generalReport += "<br>Base on some statistics data of victorian schools, the area of your school located is under average level and the type of your school have more dropout rate than the others.";
+        }
+
+        //Strength Identification
+        if ((studyEngagementValue > 80) &&
+            (personalityValue > 80) &&
+            (socialFactorValue > 80) &&
+            (familyFactorValue > 80) &&
+            (schoolFactorValue > 80)) {
+            generalReport += "<br>By now, all five aspects of this child are good.";
+        }
+        document.getElementById("GeneralReport").innerHTML = generalReport;
 /*
         $surveyPage.setAttribute("style", "position: relative; left:100px; background: rgba(255, 250, 250, 1); width:500px; height:500px");
 */

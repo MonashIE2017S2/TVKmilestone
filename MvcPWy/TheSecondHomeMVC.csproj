@@ -185,6 +185,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\EduOutcomesController.cs" />
     <Compile Include="Controllers\IdentifyQuestionsController.cs" />
     <Compile Include="Hubs\ChatHub.cs" />
     <Compile Include="Controllers\AccountController.cs" />
@@ -192,6 +193,9 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EduOutcome.cs">
+      <DependentUpon>ModelEduOutcome.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\IdentifyQuestion.cs">
       <DependentUpon>IdentifyQuestionsModel.tt</DependentUpon>
@@ -210,6 +214,21 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>IdentifyQuestionsModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelEduOutcome.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelEduOutcome.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelEduOutcome.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelEduOutcome.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelEduOutcome.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelEduOutcome.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\User\UserLogin.cs" />
     <Compile Include="Models\User\UserPersonal.cs" />
@@ -279,6 +298,16 @@
       <DependentUpon>IdentifyQuestionsModel.edmx</DependentUpon>
       <LastGenOutput>IdentifyQuestionsModel.cs</LastGenOutput>
     </Content>
+    <Content Include="Models\ModelEduOutcome.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelEduOutcome.edmx</DependentUpon>
+      <LastGenOutput>ModelEduOutcome.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ModelEduOutcome.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelEduOutcome.edmx</DependentUpon>
+      <LastGenOutput>ModelEduOutcome.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\AnimationLogo.js" />
     <Content Include="Scripts\BGbird.js" />
     <Content Include="Scripts\bootbox.min.js" />
@@ -293,6 +322,13 @@
     </EntityDeploy>
     <Content Include="Models\IdentifyQuestionsModel.edmx.diagram">
       <DependentUpon>IdentifyQuestionsModel.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\ModelEduOutcome.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelEduOutcome.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ModelEduOutcome.edmx.diagram">
+      <DependentUpon>ModelEduOutcome.edmx</DependentUpon>
     </Content>
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />

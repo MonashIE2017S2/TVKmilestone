@@ -191,24 +191,113 @@
                                                         <div class="modal-body">
                                                             <canvas id="myChart" width="1000" height="500"></canvas>
                                                             <script>
+                                                                var eoApi = "https://localhost:44306/api/EduOutcomes/";
+                                                                var dataList = new Array(11);
+                                                                var labelList = new Array(11);
                                                                 var ctx = document.getElementById("myChart").getContext('2d');
                                                                 Chart.defaults.global.defaultFontFamily = "Lato";
                                                                 Chart.defaults.global.defaultFontSize = 12;
+                                                                var eoApi1 = eoApi + "DomesticViolence";
+                                                                $.getJSON(eoApi1, {
+                                                                        format: "json"
+                                                                    })
+                                                                    .done(function (data) {
+                                                                        dataList[0] = data.dataValue;
+                                                                        labelList[0] = data.Id;
+                                                                    });
+                                                                var eoApi2 = eoApi + "FinancialDifficulties";
+                                                                $.getJSON(eoApi2, {
+                                                                        format: "json"
+                                                                    })
+                                                                    .done(function (data) {
+                                                                        dataList[1] = data.dataValue;
+                                                                        labelList[1] = data.Id;
+                                                                    });
+                                                                var eoApi3 = eoApi + "HousingCrisis";
+                                                                $.getJSON(eoApi3, {
+                                                                        format: "json"
+                                                                    })
+                                                                    .done(function (data) {
+                                                                        dataList[2] = data.dataValue;
+                                                                        labelList[2] = data.Id;
+                                                                    });
+                                                                var eoApi4 = eoApi + "InappropriateDwellings";
+                                                                $.getJSON(eoApi4, {
+                                                                        format: "json"
+                                                                    })
+                                                                    .done(function (data) {
+                                                                        dataList[3] = data.dataValue;
+                                                                        labelList[3] = data.Id;
+                                                                    });
+                                                                var eoApi5 = eoApi + "RelationshipIssues";
+                                                                $.getJSON(eoApi5, {
+                                                                        format: "json"
+                                                                    })
+                                                                    .done(function (data) {
+                                                                        dataList[4] = data.dataValue;
+                                                                        labelList[4] = data.Id;
+                                                                    });
+                                                                var eoApi6 = eoApi + "AccommodationIssues";
+                                                                $.getJSON(eoApi6, {
+                                                                        format: "json"
+                                                                    })
+                                                                    .done(function (data) {
+                                                                        dataList[5] = data.dataValue;
+                                                                        labelList[5] = data.Id;
+                                                                    });
+                                                                var eoApi7 = eoApi + "HealthIssues";
+                                                                $.getJSON(eoApi7, {
+                                                                        format: "json"
+                                                                    })
+                                                                    .done(function (data) {
+                                                                        dataList[6] = data.dataValue;
+                                                                        labelList[6] = data.Id;
+                                                                    });
+                                                                var eoApi8 = eoApi + "CustodyTransition";
+                                                                $.getJSON(eoApi8, {
+                                                                        format: "json"
+                                                                    })
+                                                                    .done(function (data) {
+                                                                        dataList[7] = data.dataValue;
+                                                                        labelList[7] = data.Id;
+                                                                    });
+                                                                var eoApi9 = eoApi + "Itinerant";
+                                                                $.getJSON(eoApi9, {
+                                                                        format: "json"
+                                                                    })
+                                                                    .done(function (data) {
+                                                                        dataList[8] = data.dataValue;
+                                                                        labelList[8] = data.Id;
+                                                                    });
+                                                                var eoApi10 = eoApi + "Lackofsupport";
+                                                                $.getJSON(eoApi10, {
+                                                                        format: "json"
+                                                                    })
+                                                                    .done(function (data) {
+                                                                        dataList[9] = data.dataValue;
+                                                                        labelList[9] = data.Id;
+                                                                    });
+                                                                var eoApi11 = eoApi + "Other";
+                                                                $.getJSON(eoApi11, {
+                                                                        format: "json"
+                                                                    })
+                                                                    .done(function (data) {
+                                                                        dataList[10] = data.dataValue;
+                                                                        labelList[10] = data.Id;
+                                                                    });
                                                                 var myChart = new Chart(ctx,
                                                                     {
                                                                         type: 'bar',
                                                                         data: {
-                                                                            labels: [
-                                                                                "Domestic Violence", "Financial Difficulties", "Housing Crisis",
-                                                                                "Inappropriate Dwellings", "Relationship Issues", "Accommodation Issues",
-                                                                                "Health Issues", "Custody Transition", "Itinerant", "Lack of support", "Other"
-                                                                            ],
+                                                                            labels: labelList 
+                                                                            ,
                                                                             datasets: [
                                                                                 {
-                                                                                    label: '# Total 17845 Children Homelessness',
-                                                                                    data: [
-                                                                                        4283, 3569, 2855, 1963, 1428, 892, 714, 357, 178, 178, 1428
-                                                                                    ],
+                                                                                    label:
+                                                                                        '# Total 17845 Children Homelessness',
+                                                                               
+                                                                                    data: dataList
+                                                                                    ,
                                                                                     backgroundColor: [
                                                                                         'rgba(255, 99, 132, 0.2)',
                                                                                         'rgba(54, 162, 235, 0.2)',
@@ -272,6 +361,43 @@
                                                         <div class="modal-body">
                                                             <canvas id="polarAreaChart" width="1000" height="500"></canvas>
                                                             <script>
+                                                                var eoApiQ2 = "https://localhost:44306/api/EduOutcomes/";
+                                                                var dataListQ2 = new Array(5);
+                                                                var eoApiQ21 = eoApiQ2 + "Childrenage1218";
+                                                                $.getJSON(eoApiQ21, {
+                                                                        format: "json"
+                                                                    })
+                                                                    .done(function (data) {
+                                                                        dataListQ2[0] = data.dataValue;
+                                                                    });
+                                                                var eoApiQ22 = eoApiQ2 + "Childrenunder12";
+                                                                $.getJSON(eoApiQ22, {
+                                                                        format: "json"
+                                                                    })
+                                                                    .done(function (data) {
+                                                                        dataListQ2[1] = data.dataValue;
+                                                                    });
+                                                                var eoApiQ23 = eoApiQ2 + "Childrensleepingrough";
+                                                                $.getJSON(eoApiQ23, {
+                                                                        format: "json"
+                                                                    })
+                                                                    .done(function (data) {
+                                                                        dataListQ2[2] = data.dataValue;
+                                                                    });
+                                                                var eoApiQ24 = eoApiQ2 + "Childrenage1218inVIC";
+                                                                $.getJSON(eoApiQ24, {
+                                                                        format: "json"
+                                                                    })
+                                                                    .done(function (data) {
+                                                                        dataListQ2[3] = data.dataValue;
+                                                                    });
+                                                                var eoApiQ25 = eoApiQ2 + "Childrenunder12inVIC";
+                                                                $.getJSON(eoApiQ25, {
+                                                                        format: "json"
+                                                                    })
+                                                                    .done(function (data) {
+                                                                        dataListQ2[4] = data.dataValue;
+                                                                    });
                                                                 var ctx = document.getElementById("polarAreaChart").getContext('2d');
                                                                 Chart.defaults.global.defaultFontFamily = "Lato";
                                                                 Chart.defaults.global.defaultFontSize = 12;
@@ -282,7 +408,7 @@
                                                                     ],
                                                                     datasets: [
                                                                         {
-                                                                            data: [10913, 17845, 402, 2283, 3638],
+                                                                            data: dataListQ2,
                                                                             backgroundColor: [
                                                                                 "rgba(255, 0, 0, 0.6)",
                                                                                 "rgba(0, 255,200, 0.6)",
@@ -395,8 +521,51 @@
                                                         <div class="modal-body">
                                                             <canvas id="donutChart" width="1000" height="500"></canvas>
                                                             <script>
+                                                                var eoApiQ3 = "https://localhost:44306/api/EduOutcomes/";
+                                                                var dataListQ3 = new Array(6);
+                                                                var eoApiQ31 = eoApiQ3 + "Q31";
+                                                                $.getJSON(eoApiQ31, {
+                                                                        format: "json"
+                                                                    })
+                                                                    .done(function (data) {
+                                                                        dataListQ3[0] = data.dataValue;
+                                                                    });
+                                                                var eoApiQ32 = eoApiQ3 + "Q32";
+                                                                $.getJSON(eoApiQ32, {
+                                                                    format: "json"
+                                                                })
+                                                                    .done(function (data) {
+                                                                        dataListQ3[1] = data.dataValue;
+                                                                    });
+                                                                var eoApiQ33 = eoApiQ3 + "Q33";
+                                                                $.getJSON(eoApiQ33, {
+                                                                        format: "json"
+                                                                    })
+                                                                    .done(function (data) {
+                                                                        dataListQ3[2] = data.dataValue;
+                                                                    });
+                                                                var eoApiQ34 = eoApiQ3 + "Q34";
+                                                                $.getJSON(eoApiQ34, {
+                                                                        format: "json"
+                                                                    })
+                                                                    .done(function (data) {
+                                                                        dataListQ3[3] = data.dataValue;
+                                                                    });
+                                                                var eoApiQ35 = eoApiQ3 + "Q35";
+                                                                $.getJSON(eoApiQ35, {
+                                                                        format: "json"
+                                                                    })
+                                                                    .done(function (data) {
+                                                                        dataListQ3[4] = data.dataValue;
+                                                                    });
+                                                                var eoApiQ36 = eoApiQ3 + "Q36";
+                                                                $.getJSON(eoApiQ36, {
+                                                                        format: "json"
+                                                                    })
+                                                                    .done(function (data) {
+                                                                        dataListQ3[5] = data.dataValue;
+                                                                    });
                                                                 var oilCanvas = document.getElementById("donutChart");
-
                                                                 Chart.defaults.global.defaultFontFamily = "Lato";
                                                                 Chart.defaults.global.defaultFontSize = 12;
 
@@ -411,7 +580,7 @@
                                                                     ],
                                                                     datasets: [
                                                                         {
-                                                                            data: [1071, 3569, 3034, 3033, 178, 6960],
+                                                                            data: dataListQ3,
                                                                             backgroundColor: [
                                                                                 "#FF6384",
                                                                                 "#63FF84",
@@ -457,23 +626,23 @@
                                                 </div>
                                             </div>
                                             <script>
-                                                                $("div[id^='myModal']").each(function () {
+                                                $("div[id^='myModal']").each(function () {
 
-                                                                    var currentModal = $(this);
+                                                    var currentModal = $(this);
 
-                                                                    //click next
-                                                                    currentModal.find('.btn-next').click(function () {
-                                                                        currentModal.modal('hide');
-                                                                        currentModal.closest("div[id^='myModal']").nextAll("div[id^='myModal']").first().modal('show');
-                                                                    });
+                                                    //click next
+                                                    currentModal.find('.btn-next').click(function () {
+                                                        currentModal.modal('hide');
+                                                        currentModal.closest("div[id^='myModal']").nextAll("div[id^='myModal']").first().modal('show');
+                                                    });
 
-                                                                    //click prev
-                                                                    currentModal.find('.btn-prev').click(function () {
-                                                                        currentModal.modal('hide');
-                                                                        currentModal.closest("div[id^='myModal']").prevAll("div[id^='myModal']").first().modal('show');
-                                                                    });
+                                                    //click prev
+                                                    currentModal.find('.btn-prev').click(function () {
+                                                        currentModal.modal('hide');
+                                                        currentModal.closest("div[id^='myModal']").prevAll("div[id^='myModal']").first().modal('show');
+                                                    });
 
-                                                                });
+                                                });
 
                                             </script>
                                         </p>
