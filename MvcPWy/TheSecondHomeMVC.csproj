@@ -281,6 +281,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Image.css" />
     <Content Include="Content\IndexModal.css" />
+    <Content Include="Content\IndexPage.css" />
     <Content Include="Content\now-ui-kit.css" />
     <Content Include="Content\popup.css" />
     <Content Include="Content\Slides.css" />

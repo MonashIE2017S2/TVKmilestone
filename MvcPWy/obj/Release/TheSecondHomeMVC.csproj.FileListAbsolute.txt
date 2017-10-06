@@ -374,3 +374,4 @@ C:\Users\Yang-Deng\Desktop\TheSecondHomeMVCwithoutDB\MvcPWy\obj\Release\MvcPWy.d
 C:\Users\Yang-Deng\Desktop\TheSecondHomeMVCwithoutDB\MvcPWy\obj\Release\MvcPWy.pdb
 C:\Users\Yang-Deng\Desktop\TheSecondHomeMVCwithoutDB\MvcPWy\obj\Release\MvcPWy.Migrations.initialmigration.resources
 C:\Users\Yang-Deng\Desktop\TheSecondHomeMVCwithoutDB\MvcPWy\obj\Release\TheSecondHomeMVC.csproj.GenerateResource.Cache
+C:\Users\Yang-Deng\Desktop\TheSecondHomeMVCwithoutDB\MvcPWy\obj\Release\TheSecondHomeMVC.csprojResolveAssemblyReference.cache

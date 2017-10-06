@@ -83,7 +83,7 @@
 </style>
 
 <div class="container">
-    <div class="col-md-2" style="position: relative; top: 0px;">
+    <div class="col-md-2">
         <br>
         <br>
         <br>
@@ -91,42 +91,38 @@
         <div class="row">
             <hr class="hr-danger" />
             <ol class="breadcrumb bread-danger">
-                <li class="btn btn-danger"><i class="fa fa-flag"></i>@Html.ActionLink("Identify Vulnerable Kids", "IdentifyVulnerableKids", "Home", new { @style = "color: white" })</li>
+                <button class="btn btn-danger btn-tvk" style="background:rgba(0,0,0,0.3);" onclick="location.href = '@Url.Action("IdentifyVulnerableKids", "Home")'"><i class="fa fa-flag"></i> Identify Vulnerable Kids</button>
             </ol>
         </div>
         <div class="row">
             <hr class="hr-primary" />
             <ol class="breadcrumb bread-primary">
-                <li class="btn btn-primary" style="color: white"><i class="fa fa-bar-chart"></i>@Html.ActionLink("Vulnerable Kids Facts", "EducationalOutcomes", "Home", new { @style = "color: white" })</li>
+                <button class="btn btn-primary btn-tvk" style="background:rgba(0,0,0,0.3);" onclick="location.href = '@Url.Action("EducationalOutcomes", "Home")'"><i class="fa fa-bar-chart"></i> Vulnerable Kids Facts</button>
             </ol>
         </div>
         <div class="row">
             <hr class="hr-success" />
             <ol class="breadcrumb bread-success">
-                <li class="btn btn-success"><i class="fa fa-paw"></i>@Html.ActionLink("Support Services", "SupportServices", "Home", new { @style = "color: white" })</li>
-            </ol>
-        </div>
-        <div class="row">
-            <hr class="hr-info" />
-            <ol class="breadcrumb bread-purple">
-                <li class="btn btn-info"><i class="fa fa-envelope"></i>@Html.ActionLink("Email Helper", "EmailHelper", "Home", new { @style = "color: white" })</li>
+                <button class="btn btn-success btn-tvk" onclick="location.href = '@Url.Action("SupportServices", "Home")'"><i class="fa fa-envelope"></i> Support Services</button>
             </ol>
         </div>
         <div class="row">
             <hr class="hr-warning" />
             <ol class="breadcrumb bread-warning">
-                <li class="btn btn-warning"><i class="fa fa-comments"></i>@Html.ActionLink("Experience Sharing", "ChatHub", "Home", new { @style = "color: white" })</li>
+                <button class="btn btn-warning btn-tvk" style="background:rgba(0,0,0,0.3);" onclick="location.href = '@Url.Action("ChatHub", "Home")'"><i class="fa fa-share-alt"></i> Experience Sharing</button>
             </ol>
         </div>
         <div class="row">
-            <hr class="hr-doc" />
-            <ol class="breadcrumb bread-doc">
-                <li class="btn btn-doc"><i class="fa fa-file-pdf-o"></i>@Html.ActionLink("Education Plan", "EducationPlan", "Home", new { @style = "color: white" })</li>
+            <hr class="hr-info" />
+            <ol class="breadcrumb bread-info">
+                <button class="btn btn-info btn-tvk" style="background:rgba(0,0,0,0.3);" onclick="location.href = '@Url.Action("EducationPlan", "Home")'"><i class="fa fa-file-pdf-o"></i> Child Action Plan</button>
             </ol>
         </div>
     </div>
-    <div class="col-md-10">
-        <div class="panel panel-default" style="background: rgba(255, 250, 250, 0.9); border: None; position: relative; left: 30px; top: 100px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+    <div class="col-md-1"></div>
+    <div class="col-md-9">
+        <div class="panel panel-success" style="background: rgba(255, 250, 250, 0.9); border: None; position: relative; left: 30px; top: 100px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+            <div class="panel-heading"></div>
             <div class="panel-body">
                 <br />
                 <div ng-app="myApp" class="row" id="content">
@@ -182,53 +178,6 @@
                                         </div>
                                     </div>
                                 </div>
-                                @*<div class="panel panel-default" id="ChildPanel">
-                                        <div class="panel-heading headingRow">
-                                            <span>Child FIRST/Protection Services</span>
-                                        </div>
-                                        <div class="panel-body" style="word-break: break-all; max-height: 100%;  max-width: 100%; padding-top: 20px;">
-                                            <div class="row clearfix">
-                                                <!---script src="~/Scripts/support.js"></!--script-->
-                                                <div ng-controller="childFirstCtrl">
-                                                    <div class="search row">
-                                                        <div class="col-md-5">
-                                                            <span>Find Contact Details of Child FIRST/Protection Service</span>
-                                                        </div>
-                                                        <div class="col-md-7">
-                                                            <input type="text" class="form-control" ng-model="filterChildFirst" placeholder="Search Child FIRST/Protection Services..." />
-                                                        </div>
-
-                                                    </div>
-                                                    <table class="table table-striped table-responsive">
-
-                                                        <tr class="headingRow" style="background-color: #009688;">
-                                                            <td class="col-md-4 headingRow">Region</td>
-                                                            <td class="col-md-4 headingRow">Contact</td>
-                                                            <td class="col-md-4 headingRow">Type</td>
-                                                        </tr>
-
-
-
-                                                        <tr class="list-row" dir-paginate="x in childFirst | filter: filterChildFirst |itemsPerPage : 10 ">
-                                                            <td>{{ x.region }}</td>
-                                                            <td>{{ x.phone }}</td>
-                                                            <td>{{ x.type }}</td>
-                                                        </tr>
-
-
-
-                                                    </table>
-                                                    <dir-pagination-controls max-size="10"
-                                                                             direction-links="true"
-                                                                             boundary-links="true">
-                                                    </dir-pagination-controls>
-
-                                                </div>
-
-
-                                            </div>
-                                        </div>
-                                    </div>*@
                             </div>
                         </div>
                     </div>
@@ -312,85 +261,11 @@
                                         </div>
                                     </div>
                                 </div>
-                                @*
-                                    <div class="panel panel-default" style="position: relative; left: 50px;" id="SfysPanel">
-                                        <div class="panel-heading headingRow">
-                                            <span>School Focused Youth Service</span>
-                                        </div>
-                                        <div class="panel-body" style="word-break: break-all; max-height: 100%;  max-width: 100%; padding-top: 20px;">
-                                            <div class="row clearfix">
-                                                <!---script src="~/Scripts/support.js"></!--script-->
-                                                <div ng-controller="sfysCtrl">
-                                                    <div class="search row">
-                                                        <div class="col-md-5">
-                                                            <span>Find Contact Details of Nearest School Focused Youth Service</span>
-                                                            <br />
-                                                            <span>*Click on the list to get more details</span>
-                                                        </div>
-                                                        <div class="col-md-7">
-                                                            <input type="text" class="form-control" ng-model="filterSfys" placeholder="Search School Focused Youth Service using Postcode..." ng-change="suburbChanged(filterSfys)" />
-                                                        </div>
-
-                                                    </div>
-                                                    <table class="table table-striped table-responsive">
-                                                        <thead>
-                                                            <tr class="headingRow" style="background-color: #009688;">
-                                                                <td class="col-md-4 headingRow">SFYS Provider</td>
-                                                                <td class="col-md-4 headingRow">Contact</td>
-                                                                <td class="col-md-4 headingRow">Email</td>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                            <tr class="list-row" dir-paginate="x in filteredSfys |itemsPerPage : 10 " ng-click="selSfys(x)">
-                                                                <td>{{ x.name }}</td>
-                                                                <td>{{ x.phone }}</td>
-                                                                <td>{{ x.email }}</td>
-                                                            </tr>
-                                                        </tbody>
-
-
-                                                    </table>
-                                                    <dir-pagination-controls max-size="5"
-                                                                             direction-links="true"
-                                                                             boundary-links="true">
-                                                    </dir-pagination-controls>
-                                                    <div ng-if="selected_sfys">
-                                                        <div class="panel">
-                                                            <div class="panel-body">
-                                                                <div class="col-md-12">
-                                                                    <h3>Agency: {{selected_sfys.name}}</h3>
-                                                                </div>
-                                                                <div class="col-md-6" style="text-align:left">
-                                                                    <h3>{{ selected_sfys.name }}</h3>
-                                                                    <h4>{{ selected_sfys.phone }}</h4>
-                                                                    <h4>{{ selected_sfys.email }}</h4>
-                                                                    <a href="{{selected_sfys.website}}"><h4 style="color:blue">{{ selected_sfys.website }}</h4></a>
-                                                                    <h4>{{ selected_sfys.address }}</h4>
-                                                                </div>
-                                                                <div class="col-md-6" style="text-align:center">
-                                                                    <ng-map center="{{selected_sfys.address}}" zoom="16">
-                                                                        <marker position="{{selected_sfys.address}}" title="{{selected_sfys.address}}" animation="Animation.BOUNCE"></marker>
-
-
-                                                                    </ng-map>
-
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                *@
                             </div>
                             <div>
                             </div>
                         </div>
                     </div>
-
                     <div class="col-md-4">
                         <div class="blockquote abc">
                             <p>
@@ -478,82 +353,6 @@
                                     </div>
                                 </div>
                             </div>
-                            @*    <div class="panel panel-default" id="SupportPanel">
-                                <div class="panel-heading headingRow">
-                                    <span>Other Support Services</span>
-                                </div>
-                                <div class="panel-body" style="word-break: break-all; max-height: 100%;  max-width: 100%; padding-top: 20px;">
-                                    <div class="row clearfix">
-                                        <!---script src="~/Scripts/support.js"></!--script-->
-                                        <div ng-controller="supportCtrl">
-                                            <div class="search row">
-                                                <div class="col-md-5">
-                                                    <span>Click to View Details of Nearest Services</span>
-                                                </div>
-                                                <div class="col-md-7">
-                                                    <input type="text" class="form-control" ng-model="filterSupport" placeholder="Search Support Services..." />
-                                                </div>
-
-                                            </div>
-                                            <table class="table table-striped table-responsive">
-                                                <thead>
-                                                    <tr class="headingRow" style="background-color: #009688;">
-                                                        <td class="col-md-2 headingRow">Agency Name</td>
-                                                        <td class="col-md-2 headingRow">Address</td>
-                                                        <td class="col-md-2 headingRow">Phone</td>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr class="list-row" dir-paginate="x in support | filter: filterSupport |itemsPerPage : 7 " ng-click="selItem(x)">
-                                                        <td>{{ x.name }}</td>
-                                                        <td>{{ x.address }}</td>
-                                                        <td>{{ x.phone }}</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                            <dir-pagination-controls max-size="5"
-                                                                     direction-links="true"
-                                                                     boundary-links="true">
-                                            </dir-pagination-controls>
-                                            <div ng-if="selected_support">
-                                                <div class="panel">
-                                                    <div class="panel-body">
-                                                        <div class="col-md-6">
-                                                            <span>Agency Name: </span>
-                                                        </div>
-                                                        <div class="col-md-6">
-                                                            <span class="form-control">{{ selected_support.name }}</span>
-                                                        </div>
-                                                        <div class="col-md-6">
-                                                            <span>Address: </span>
-                                                        </div>
-                                                        <div class="col-md-6">
-                                                            <span class="form-control">{{ selected_support.address }}</span>
-                                                        </div>
-                                                        <div class="col-md-6">
-                                                            <span>Contact: </span>
-                                                        </div>
-                                                        <div class="col-md-6">
-                                                            <span class=form-control id="address">{{ selected_support.phone }}</span>
-                                                        </div>
-                                                        <div class="col-md-6">
-                                                            <span>Email: </span>
-                                                        </div>
-                                                        <div class="col-md-6">
-                                                            <span class="form-control">{{ selected_support.email }}</span>
-                                                        </div>
-                                                        <div class="col-md-6">
-                                                            <span>Agency website: </span>
-                                                        </div>
-                                                        <div class="col-md-6">
-                                                            <a class="list-group-item list-group-item-success" href="{{selected_support.webSite}}">{{ selected_support.webSite }}</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>*@
                         </div>
                     </div>
                 </div>

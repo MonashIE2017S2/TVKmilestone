@@ -87,7 +87,7 @@ database.ref().on("value", function (snap) {
     });*/
 
     survey.onValueChanged.add(function (sender, options) {
-        var erApi = "https://localhost:44306/api/IdentifyQuestions/";
+        var erApi = "/api/IdentifyQuestions/";
 
         switch (options.value) {
             //question1
