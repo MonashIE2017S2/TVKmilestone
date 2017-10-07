@@ -515,21 +515,74 @@ database.ref().on("value", function (snap) {
             generalReport += "<br>Base on some statistics data of victorian schools, the area of your school located is under average level and the type of your school have more dropout rate than the others.";
         }
 
-        //Strength Identification
-        if ((studyEngagementValue > 80) &&
-            (personalityValue > 80) &&
-            (socialFactorValue > 80) &&
-            (familyFactorValue > 80) &&
-            (schoolFactorValue > 80)) {
-            generalReport += "<br>By now, all five aspects of this child are good.";
+        //5-aspects are Average
+        if ((studyEngagementValue >= 60) && (personalityValue >= 60) &&
+            (socialFactorValue >= 60) && (familyFactorValue >= 60) && (schoolFactorValue >= 60)) {
+            generalReport += "<br>So far, all five signs of this child are in qualified status, but there are still potential risks on this child which shown by shortage in the diagram.";
+            //5-aspects all good
+            if ((studyEngagementValue >= 70) && (personalityValue >= 70) && (socialFactorValue >= 70) && (familyFactorValue >= 70) && (schoolFactorValue >= 70)) {
+                generalReport += "<br>So far,so good, all five signs of are pointing to positive, so don't worry about this child.";
+            }
         }
+
         document.getElementById("GeneralReport").innerHTML = generalReport;
 
 
         var schoolRelatedScore = document.getElementById("SchoolRelatedScore");
-        var att = document.createAttribute("aria-valuenow");
-        att.value = "100";
-        schoolRelatedScore.setAttributeNode(att);
+        var schoolRelatedScorePopOver = document.getElementById("SchoolRelatedPopOver");
+        if (schoolFactorValue >= 60) {
+            schoolRelatedScore.setAttribute("aria-valuenow", schoolFactorValue);
+            schoolRelatedScorePopOver.setAttribute("title", schoolFactorValue + "/100,Pass");
+        } else {
+            schoolRelatedScore.setAttribute("style", "background-color: rgb(217,83,79);");
+            schoolRelatedScore.setAttribute("aria-valuenow", schoolFactorValue);
+            schoolRelatedScorePopOver.setAttribute("title", schoolFactorValue + "/100,Fail");
+        }
+
+        var familyRelatedScore = document.getElementById("FamilyRelatedScore");
+        var familyRelatedScorePopOver = document.getElementById("FamilyRelatedPopOver");
+        if (familyFactorValue >= 60) {
+            familyRelatedScore.setAttribute("aria-valuenow", familyFactorValue);
+            familyRelatedScorePopOver.setAttribute("title", familyFactorValue + "/100,Pass");
+        } else {
+            familyRelatedScore.setAttribute("style", "background-color: rgb(217,83,79);");
+            familyRelatedScore.setAttribute("aria-valuenow", familyFactorValue);
+            familyRelatedScorePopOver.setAttribute("title", familyFactorValue + "/100,Fail");
+        }
+
+        var socialRelatedScore = document.getElementById("SocialRelatedScore");
+        var socialRelatedScorePopOver = document.getElementById("SocialRelatedPopOver");
+        if (socialFactorValue >= 60) {
+            socialRelatedScore.setAttribute("aria-valuenow", socialFactorValue);
+            socialRelatedScorePopOver.setAttribute("title", socialFactorValue + "/100,Pass");
+        } else {
+            socialRelatedScore.setAttribute("style", "background-color: rgb(217,83,79);");
+            socialRelatedScore.setAttribute("aria-valuenow", socialFactorValue);
+            socialRelatedScorePopOver.setAttribute("title", socialFactorValue + "/100,Fail");
+        }
+
+        var personalityScore = document.getElementById("PersonalityScore");
+        var personalityScorePopOver = document.getElementById("PersonalityPopOver");
+        if (personalityValue >= 60) {
+            personalityScore.setAttribute("aria-valuenow", personalityValue);
+            personalityScorePopOver.setAttribute("title", personalityValue + "/100,Pass");
+        } else {
+            personalityScore.setAttribute("style", "background-color: rgb(217,83,79);");
+            personalityScore.setAttribute("aria-valuenow", personalityValue);
+            personalityScorePopOver.setAttribute("title", personalityValue + "/100,Fail");
+        }
+
+        var studyScore = document.getElementById("StudyEngagementScore");
+        var studyScorePopOver = document.getElementById("StudyEngagementPopOver");
+        if (studyEngagementValue >= 60) {
+            studyScore.setAttribute("aria-valuenow", studyEngagementValue);
+            studyScorePopOver.setAttribute("title", studyEngagementValue + "/100,Pass");
+        } else {
+            studyScore.setAttribute("style", "background-color: rgb(217,83,79);");
+            studyScore.setAttribute("aria-valuenow", studyEngagementValue);
+            studyScorePopOver.setAttribute("title", studyEngagementValue + "/100,Fail");
+        }
+
 
         $('[data-toggle="tooltip"]').tooltip({ trigger: 'manual' }).tooltip('show');
         $(".progress-bar").each(function () {
@@ -538,13 +591,5 @@ database.ref().on("value", function (snap) {
         });
     });
 
-
-
     $("#surveyElement").Survey({ model: survey });
 });
-
-/*var schoolRelatedScore = document.getElementById("SchoolRelatedScore");
-var att = document.createAttribute("aria-valuenow");
-att.value = "100";
-schoolRelatedScore.setAttributeNode(att);
-schoolRelatedScore.generate();*/

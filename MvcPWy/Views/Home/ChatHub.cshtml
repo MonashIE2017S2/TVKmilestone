@@ -1,6 +1,7 @@
 ﻿@{
-    ViewBag.Title = "ChatHub";
+    ViewBag.Title = "Experience Sharing";
 }
+@*
 <style>
     .c-list {
         padding: 0px;
@@ -53,6 +54,7 @@
         font-size: 1.25em;
     }
 </style>
+*@
 <link rel="stylesheet" href="~/Content/popup.css">
 <script src="~/Scripts/jquery.signalR-2.2.2.js"></script>
 <script src="~/signalr/hubs"></script>
@@ -212,8 +214,8 @@
             <div class="col-md-8">
                 <div class="row">
                     <div class="panel panel-warning" style="background: rgba(255, 250, 250, 0.9); border: None; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
-                        <div class="panel-heading">Share experience in Facebook</div>
-                        <div class="panel-body">
+                        <div class="panel-heading">Share your experience in Facebook & Twitter or our own channel</div>
+                        <div class="panel-body" style="text-align: center;">
                             <div class="fb-page" data-href="https://www.facebook.com/HPUVIC/?hc_ref=ARSM6bKuCjqEx1TrYuNFgRM5SraHvR7XiYjidWsHajrfUgt5rf9wRj-kNvWU9-b7sPU&amp;fref=nf" data-tabs="timeline" data-width="500" data-height="70" data-small-header="true" data-adapt-container-width="false" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/HPUVIC/?hc_ref=ARSM6bKuCjqEx1TrYuNFgRM5SraHvR7XiYjidWsHajrfUgt5rf9wRj-kNvWU9-b7sPU&amp;fref=nf" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/HPUVIC/?hc_ref=ARSM6bKuCjqEx1TrYuNFgRM5SraHvR7XiYjidWsHajrfUgt5rf9wRj-kNvWU9-b7sPU&amp;fref=nf">Homeless Persons Union Victoria</a></blockquote>
                             </div>
                             <div id="fb-root"></div>
@@ -227,13 +229,15 @@
                                     fjs.parentNode.insertBefore(js, fjs);
                                 }(document, 'script', 'facebook-jssdk'));
                             </script>
+                            <a class="twitter-timeline" data-width="500" data-height="50" data-theme="light" href="https://twitter.com/HomelessnessAus?ref_src=twsrc%5Etfw"></a>
+                            <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="panel panel-warning" style="background: rgba(255, 250, 250, 0.9); border: None; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
-                        <div class="panel-heading">Chat Room</div>
-                        <div class="panel-body" style="height: 250px; word-break: break-all; overflow-y: scroll;">
+                        <div class="panel-body" style="height: 185px; word-break: normal; overflow-y: scroll;">
+                            <p style="font-weight: bolder; text-align: center">Welcome to our ChatRoom</p>
                             <ul id="chatRoom"></ul>
                         </div>
                     </div>
@@ -259,7 +263,7 @@
             <div class="col-md-4">
                 <div class="panel panel-warning" style="background: rgba(255, 250, 250, 0.9); border: None;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
                     <div class="panel-heading">Contact List</div>
-                    <div class="panel-body" style="height: 493px; word-break: break-all; overflow-y: scroll;">
+                    <div class="panel-body" style="height: 593px; word-break: normal; overflow-y: scroll;">
                         <ul class="list-group" id="contact-list">
                             <li class="list-group-item">
                                 <ul id="lstUser"></ul>
