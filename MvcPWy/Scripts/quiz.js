@@ -473,7 +473,7 @@ database.ref().on("value", function (snap) {
                     max:100
                 },
                 pointLabels: {
-                    fontSize: 16
+                    fontSize: 12
                 }
             }
         };
@@ -524,53 +524,27 @@ database.ref().on("value", function (snap) {
             generalReport += "<br>By now, all five aspects of this child are good.";
         }
         document.getElementById("GeneralReport").innerHTML = generalReport;
-/*
-        $surveyPage.setAttribute("style", "position: relative; left:100px; background: rgba(255, 250, 250, 1); width:500px; height:500px");
-*/
-
-        /*var emotion = result.data['Emotion'];
-        var socialEvents = result.data['SocialEvents'];
-        var sports = result.data['Sports'];
-        var friends = result.data['Friends'];
-        var age = result.data['Age'];
-        var gender = result.data['kidGender'];
-        var suburb = result.data['Suburb'];
 
 
-        var $alert1 = $("#alert1");
-        var $alert2 = $("#alert2");
-        var $alertSad = $("#alert-sad");
-        var $alertHappy = $("#alert-happy");
-        var $alertOK = $("#ok");
+        var schoolRelatedScore = document.getElementById("SchoolRelatedScore");
+        var att = document.createAttribute("aria-valuenow");
+        att.value = "100";
+        schoolRelatedScore.setAttributeNode(att);
 
-        //Find low income suburb
-        var nillIncomePercent = obj[suburb]["TotalCount"] / obj[suburb]["nillIncomeCount"];
-        
-
-
-        //Calculate vulnerability of child
-        if ((parseInt(emotion) <= 2 && (friends === "Few Friend" || friends === "Not Sure" || friends === "One or Two Friends") )|| nillIncomePercent < 20) {
-
-            $alertSad.show();
-
-            $alert1.stop().fadeIn(300);
-            //$alertSad.css("visibility","hidden");
-        }
-        else {
-            $alertHappy.show();
-            $alert2.stop().fadeIn(300);
-            //$alertHappy.css("visibility","hidden");
-
-        }
-
-        $(".ok").click(function () {
-            $("#alertSad").hide();
-            $("$alertHappy").hide();
-
-        });*/
-
+        $('[data-toggle="tooltip"]').tooltip({ trigger: 'manual' }).tooltip('show');
+        $(".progress-bar").each(function () {
+            each_bar_width = $(this).attr('aria-valuenow');
+            $(this).width(each_bar_width + '%');
+        });
     });
+
+
 
     $("#surveyElement").Survey({ model: survey });
 });
 
+/*var schoolRelatedScore = document.getElementById("SchoolRelatedScore");
+var att = document.createAttribute("aria-valuenow");
+att.value = "100";
+schoolRelatedScore.setAttributeNode(att);
+schoolRelatedScore.generate();*/
