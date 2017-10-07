@@ -448,3 +448,4 @@ C:\Users\Yang-Deng\Documents\Visual Studio 2017\Projects\TVKmilestone\TVKmilesto
 C:\Users\Yang-Deng\Documents\Visual Studio 2017\Projects\TVKmilestone\TVKmilestone\MvcPWy\obj\Release\TheSecondHomeMVC.csproj.CoreCompileInputs.cache
 C:\Users\Yang-Deng\Documents\Visual Studio 2017\Projects\TVKmilestone\TVKmilestone\MvcPWy\obj\Release\MvcPWy.dll
 C:\Users\Yang-Deng\Documents\Visual Studio 2017\Projects\TVKmilestone\TVKmilestone\MvcPWy\obj\Release\MvcPWy.pdb
+C:\Users\Yang-Deng\Documents\Visual Studio 2017\Projects\TVKmilestone\TVKmilestone\MvcPWy\obj\Release\TheSecondHomeMVC.csprojResolveAssemblyReference.cache

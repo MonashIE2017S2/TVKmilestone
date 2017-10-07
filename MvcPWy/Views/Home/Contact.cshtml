@@ -1,99 +1,81 @@
 ﻿@{
     ViewBag.Title = "Contact";
 }
-<link rel="stylesheet" href="~/Content/about.css">
-<div class="row">
-    <div class="col-md-2">
-    </div>
-    <div class="col-md-8">
-        <br>
-        <div class="panel panel-default" style="background: rgba(255, 250, 250, 0.9); border: None; position: relative; left: 30px; top: 20px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
-            <div class="panel-body" style="word-break: break-all; overflow-y: scroll; max-height: 800px;">
-                <div class="row clearfix">
-                    <div class="panel panel-default">
-                        <a data-toggle="collapse" href="#team" aria-expanded="false" aria-controls="team">
-                            <div class="panel-heading w3-container w3-light-grey">
-                                <span class="label label-default"> ©Team Y-Nots</span>
-                                <a href="#" class="fa fa-facebook"></a>
-                                <a href="#" class="fa fa-twitter"></a>
-                                <a href="https://github.com/MonashIE2017S2/thesecondhome" class="fa fa-github"></a>
-                                <a href="#" class="fa fa-instagram"></a>
-                            </div>
-                        </a>
-                        <div class="panel-body" id="team">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="w3-card-4 w3-center w3-hover-teal">
-                                        <div class="w3-container w3-center">
-                                            Roshan
-                                        </div>
-                                        <img src="~/Image/roshan.PNG">
-                                        <div class="w3-container w-right">
-                                            <ul class="w3-center">
-                                                <li>Developer</li>
-                                                <li>Master of Information Technology Student,</li>
-                                                <li>Monash University</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="w3-card-4 w3-center w3-hover-teal">
-                                        <div class="w3-container w3-center">
-                                            Yang
-                                        </div>
-                                        <img src="~/Image/yang.PNG" class="image">
-                                        <div class="w3-container w-right">
-                                            <ul class="w3-center">
-                                                <li>Developer</li>
-                                                <li>Master of Information Technology Student,</li>
-                                                <li>Monash University</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <br /><br />
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="w3-card-4 w3-center w3-hover-teal">
-                                        <div class="w3-container w3-center">
-                                            Cary
-                                        </div>
-                                        <img src="~/Image/cary.PNG" class="image">
-                                        <div class="w3-container w-right">
-                                            <ul class="w3-center">
-                                                <li>Business Analyst</li>
-                                                <li>Master of BIS Student,</li>
-                                                <li>Monash University</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="w3-card-4 w3-center w3-hover-teal">
-                                        <div class="w3-container w3-center">
-                                            Han
-                                        </div>
-                                        <img src="~/Image/han.PNG" class="image">
-                                        <div class="w3-container w-right">
-                                            <ul class="w3-center">
-                                                <li>Business Analyst</li>
-                                                <li>Master of BIS Student,</li>
-                                                <li>Monash University</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+<link rel="stylesheet" href="~/Content/contact.css" />
+<div class="container">
+@*    <div class="col-md-1">
+    </div>*@
+    <div class="col-md-5">
+        <div class="content">
+            <div class="card1">
+                <div class="firstinfo">
+                    <img src="~/Image/yang.jpg" />
+                    <div class="profileinfo">
+                        <h1>Yang Deng</h1>
+                        <h3>Dev of Team Y-nots </h3>
+                        <p class="bio">
+                            <i class="fa fa-envelope-o" aria-hidden="true"></i>:cnyangdengau@hotmail.com<br>
+                            <i class="fa fa-github" aria-hidden="true"></i>:github.com/fredrickdeng
+                        </p>
                     </div>
                 </div>
             </div>
+@*            <div class="badgescard">
+                <span class="devicons devicons-django"></span><span class="devicons devicons-python"> </span><span class="devicons devicons-codepen"></span><span class="devicons devicons-javascript_badge"></span><span class="devicons devicons-gulp"></span><span class="devicons devicons-angular"></span><span class="devicons devicons-sass"> </span>
+            </div>*@
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="card2">
+                <div class="firstinfo">
+                    <img src="~/Image/roshan.jpg" />
+                    <div class="profileinfo">
+                        <h1>Roshan </h1>
+                        <h3>Dev of Team Y-nots </h3>
+                        <p class="bio">Lived all my life on the top of mount Fuji, learning the way to be a Ninja Dev.</p>
+                    </div>
+                </div>
+            </div>
+@*            <div class="badgescard">
+                <span class="devicons devicons-django"></span><span class="devicons devicons-python"> </span><span class="devicons devicons-codepen"></span><span class="devicons devicons-javascript_badge"></span><span class="devicons devicons-gulp"></span><span class="devicons devicons-angular"></span><span class="devicons devicons-sass"> </span>
+            </div>*@
         </div>
     </div>
     <div class="col-md-2">
+    </div>
+    <div class="col-md-5">
+        <div class="content">
+            <div class="card3">
+                <div class="firstinfo">
+                    <img src="~/Image/cary.PNG" />
+                    <div class="profileinfo">
+                        <h1>Cary</h1>
+                        <h3>BA of Team Y-nots</h3>
+                        <p class="bio">Lived all my life on the top of mount Fuji, learning the way to be a Ninja Dev.</p>
+                    </div>
+                </div>
+            </div>
+@*            <div class="badgescard">
+                <span class="devicons devicons-django"></span><span class="devicons devicons-python"> </span><span class="devicons devicons-codepen"></span><span class="devicons devicons-javascript_badge"></span><span class="devicons devicons-gulp"></span><span class="devicons devicons-angular"></span><span class="devicons devicons-sass"> </span>
+            </div>*@
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="card4">
+                <div class="firstinfo">
+                    <img src="~/Image/han.PNG" />
+                    <div class="profileinfo">
+                        <h1>Weihan Wang</h1>
+                        <h3>BA of Team Y-nots</h3>
+                        <p class="bio">Lived all my life on the top of mount Fuji, learning the way to be a Ninja Dev.</p>
+                    </div>
+                </div>
+            </div>
+@*            <div class="badgescard">
+                <span class="devicons devicons-django"></span><span class="devicons devicons-python"> </span><span class="devicons devicons-codepen"></span><span class="devicons devicons-javascript_badge"></span><span class="devicons devicons-gulp"></span><span class="devicons devicons-angular"></span><span class="devicons devicons-sass"> </span>
+            </div>*@
+        </div>
     </div>
 </div>
