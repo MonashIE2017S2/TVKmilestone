@@ -6,9 +6,6 @@ body, .badgescard, .firstinfo {
     align-items: center;
 }
 
-html {
-    height: 100%;
-}
 
 *, *:before, *:after {
     box-sizing: border-box;

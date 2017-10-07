@@ -1,0 +1,32 @@
+﻿<Properties StartupConfiguration="{A0C81FFE-D414-40F9-BED1-5A9434FD6B12}|">
+  <MonoDevelop.Ide.ItemProperties.TheSecondHomeMVC PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="MvcPWy/Views/Home/Contact.cshtml">
+    <Files>
+      <File FileName="MvcPWy/Global.asax" Line="1" Column="1" />
+      <File FileName="MvcPWy/Startup.cs" Line="1" Column="1" />
+      <File FileName="MvcPWy/Web.config" Line="1" Column="1" />
+      <File FileName="MvcPWy/Views/Home/About.cshtml" Line="1" Column="1" />
+      <File FileName="MvcPWy/Views/Home/ChatHub.cshtml" Line="1" Column="1" />
+      <File FileName="MvcPWy/Views/Home/Contact.cshtml" Line="11" Column="9" />
+      <File FileName="MvcPWy/Views/_ViewStart.cshtml" Line="1" Column="1" />
+      <File FileName="MvcPWy/Views/Web.config" Line="1" Column="1" />
+      <File FileName="MvcPWy/Views/Shared/_Layout.cshtml" Line="23" Column="5" />
+      <File FileName="MvcPWy/Content/Site.css" Line="12" Column="4" />
+      <File FileName="MvcPWy/Content/BGbird.css" Line="2" Column="1" />
+      <File FileName="MvcPWy/Content/contact.css" Line="1" Column="69" />
+      <File FileName="MvcPWy/Project_Readme.html" Line="1" Column="1" />
+      <File FileName="MvcPWy/Views/Shared/Lockout.cshtml" Line="1" Column="1" />
+      <File FileName="MvcPWy/Views/Shared/Info.cshtml" Line="1" Column="1" />
+      <File FileName="MvcPWy/Views/Shared/Error.cshtml" Line="1" Column="1" />
+      <File FileName="MvcPWy/Views/Shared/_LoginPartial.cshtml" Line="1" Column="1" />
+      <File FileName="../../../../Library/Frameworks/Mono.framework/Versions/5.2.0/lib/mono/msbuild/15.0/bin/Microsoft.Common.CurrentVersion.targets" Line="2001" Column="5" />
+      <File FileName="MvcPWy/App_Start/IdentityConfig.cs" Line="29" Column="69" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>

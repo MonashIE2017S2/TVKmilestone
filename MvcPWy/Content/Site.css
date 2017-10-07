@@ -1,7 +1,15 @@
-﻿body {
+﻿@import "https://fonts.googleapis.com/css?family=Open+Sans:300,400";
+
+/*body {
     padding-bottom: 20px;
     padding-top: 50px;
-}
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    background: url("../Image/bg.jpg");
+    background-size: cover;
+}*/
 
 /* Set padding to keep content from hitting the edges */
 
